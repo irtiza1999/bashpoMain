@@ -39,10 +39,10 @@ const ProductCard = ({ product }) => {
   });
 
   const [isFavorite, setIsFavorite] = useState(false);
-    const [addToFav, { isLoading }] = useAddFavoriteMutation();
-    const { data: favProducts, FavIsLoading, refetch, error } = useGetFavoriteQuery();
+  const [addToFav, { isLoading }] = useAddFavoriteMutation();
+  const { data: favProducts, FavIsLoading, refetch, error } = useGetFavoriteQuery();
 
-const handleFavoriteClick = async () => {
+  const handleFavoriteClick = async () => {
     if (!userInfo) {
       toast.error('Please login to add to favorites');
       return;
@@ -71,7 +71,7 @@ const handleFavoriteClick = async () => {
 
 
   useEffect(() => {
-    if(!userInfo) return setIsFavorite(false);
+    if (!userInfo) return setIsFavorite(false);
     if (favProducts) {
       const index = favProducts.findIndex((item) => item._id === product._id);
       if (index !== -1) {
@@ -83,46 +83,48 @@ const handleFavoriteClick = async () => {
   }, [favProducts, userInfo]);
 
 
-  const [verifiedProduct,setVerifiedProduct] = useState(false);
+  const [verifiedProduct, setVerifiedProduct] = useState(false);
   useEffect(() => {
-    if(product.isVerified){
+    if (product.isVerified) {
       setVerifiedProduct(true);
     }
   }, [product]);
-  
+
 
   return (
-    <div style={{ padding: '10px' }}>
+    <div style={{ padding: '10px', marginLeft: '-35px' }}>
       <AnimatedCard style={{ ...animationProps, ...hoverProps, borderRadius: '10px' }}>
         <Card>
           <LinkContainer to={`/product/${product._id}`}>
             <CardActionArea>
               <div>
-              <CardMedia
-                component="img"
-                image={imageBaseUrl+product.image}
-                alt={product.name}
-                style={{width:'100%',height: '15vw',
-                objectFit: 'cover'}}
-                position="top"
-              />
+                <CardMedia
+                  component="img"
+                  image={imageBaseUrl + product.image}
+                  alt={product.name}
+                  style={{
+                    width: '100%', height: '15vw',
+                    objectFit: 'cover'
+                  }}
+                  position="top"
+                />
               </div>
               <CardContent>
                 <Typography gutterBottom variant="h6" component="div">
-                    {product.name}
+                  {product.name}
                 </Typography>
-                      <Typography gutterBottom variant="h8" component="div" 
-                      // style={{ display: 'flex', alignItems: 'center' }}
-                      >
+                <Typography gutterBottom variant="h8" component="div"
+                // style={{ display: 'flex', alignItems: 'center' }}
+                >
                   {verifiedProduct ? (
                     <>
-                    <DoneAllIcon sx={{ fontSize: 14, color: 'green', fontWeight: 'bold' }} />
-                    <span style={{ marginLeft: 5, color: 'green' }}>Verified</span>
+                      <DoneAllIcon sx={{ fontSize: 14, color: 'green', fontWeight: 'bold' }} />
+                      <span style={{ marginLeft: 5, color: 'green' }}>Verified</span>
                     </>
                   ) : (
                     <>
-                    <GppMaybeIcon sx={{ fontSize: 14, color: 'red', fontWeight: 'bold' }} />
-                    <span style={{ marginLeft: 5, color: 'red' }}>Not Verified</span>
+                      <GppMaybeIcon sx={{ fontSize: 14, color: 'red', fontWeight: 'bold' }} />
+                      <span style={{ marginLeft: 5, color: 'red' }}>Not Verified</span>
                     </>
                   )}
                 </Typography>
@@ -139,7 +141,7 @@ const handleFavoriteClick = async () => {
                     <Rating name="half-rating" defaultValue={product.rating} precision={0.5} readOnly />
                   </Typography>
                 </div>
-                
+
                 <Typography variant="body2" color="text.secondary">
                   <b>${product.price}</b>
                 </Typography>
@@ -147,7 +149,7 @@ const handleFavoriteClick = async () => {
             </CardActionArea>
           </LinkContainer>
           <CardActions style={{ justifyContent: 'space-between' }}>
-            {product.countInStock > 0 && verifiedProduct && !inCart? (
+            {product.countInStock > 0 && verifiedProduct && !inCart ? (
               <LinkContainer to="/cart">
                 <CartButton product={product} size="small" color="primary">
                   Add to Cart

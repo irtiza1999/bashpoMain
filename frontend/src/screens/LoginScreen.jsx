@@ -5,7 +5,7 @@ import Formcontainer from "../components/Formcontainer";
 import { useDispatch, useSelector } from "react-redux";
 import { useLoginMutation, useGoogleLoginMutation } from '../slices/userApiSlice';
 import { setCredentials } from "../slices/authSlice";
-import {setOtpVerified, clearOtpVerified} from "../slices/otpSlice";
+import { setOtpVerified, clearOtpVerified } from "../slices/otpSlice";
 import { toast } from 'react-toastify';
 import Loader from "../components/Loader";
 import Message from "../components/Message";
@@ -40,7 +40,7 @@ const LoginScreen = () => {
     }
   }, []);
 
-   const navigateToPort3001 = () => {
+  const navigateToPort3001 = () => {
     window.location.href = 'http://localhost:3001';
   };
   const submitHandler = async (e) => {
@@ -53,7 +53,7 @@ const LoginScreen = () => {
       toast.error(err?.data?.message || err?.error);
     }
   };
-  
+
 
   const handleMessage = (event) => {
     if (event.data.type === 'OTP_VERIFIED') {

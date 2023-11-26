@@ -111,14 +111,16 @@ const Header = () => {
   const { cartItems } = cart;
   const [cartCount, setCartCount] = useState(0);
 
-  useEffect(() => {{
-    setCartCount(cartItems.length);
-  }}, [cartItems]);
+  useEffect(() => {
+    {
+      setCartCount(cartItems.length);
+    }
+  }, [cartItems]);
 
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if(!search) return toast.error('Please enter a search term')
+    if (!search) return toast.error('Please enter a search term')
     navigate(`/search/${search}`);
     setSearch('');
   };
@@ -130,7 +132,7 @@ const Header = () => {
   return (
     <div style={{ marginBottom: '30px' }}>
       <AppBar position="fixed" style={{ background: 'black' }}>
-        
+
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <LinkContainer to="/">
@@ -148,7 +150,7 @@ const Header = () => {
                   textDecoration: 'none',
                 }}
               >
-                 <img
+                <img
                   src="https://dl.dropboxusercontent.com/s/5ajwo527jc1bmv1/logo.png?dl=0"
                   alt="logo"
                   width="50px"
@@ -234,7 +236,7 @@ const Header = () => {
                     categories.map((category) => (
                       <LinkContainer key={category} to={`/${category}`}>
                         <Button
-                        style={{ color: 'white' }}
+                          style={{ color: 'white' }}
                           key={category}
                           onClick={handleCloseNavMenu}
                           sx={{ my: 2, color: 'white', display: 'block' }}
@@ -246,47 +248,39 @@ const Header = () => {
                 </>
               )}
             </Box>
-            <Box  sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' } }}>
-            <div style={{ marginRight: '10px' }}>
-            {userInfo && userInfo.artists && (
-              <LinkContainer to="/artist/panel" style={{ color: 'white' }}>
-                <Button variant="contained" color="info" className = 'btn-sm'>
-                  <GroupWorkIcon/> Artist Dashboard
-                </Button>
-              </LinkContainer>
-            )}
-            </div>
-            
-            {userInfo && userInfo.admin && (
-              <LinkContainer to="/admin/userslist" style={{ color: 'white' }}>
-                <Button variant="contained" color="info" className = 'btn-sm'>
-                <AdminPanelSettingsIcon/> Admin Panel
-                </Button>
-              </LinkContainer>
-            )}
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' } }}>
+              <div style={{ marginRight: '10px' }}>
+                {userInfo && userInfo.artists && (
+                  <LinkContainer to="/artist/panel" style={{ color: 'white' }}>
+                    <Button variant="contained" color="info" className='btn-sm'>
+                      <GroupWorkIcon /> Artist Dashboard
+                    </Button>
+                  </LinkContainer>
+                )}
+              </div>
             </Box>
 
             <div style={{ marginRight: '10px' }}>
-            <form onSubmit={handleSearch}>
-            <Search>
-            <SearchIconWrapper>
-              <SearchIcon style={{ color: 'white' }}/>
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-              style={{ color: 'white' }}
-              value = {search ? search : ''}
-              onChange = {(e) => setSearch(e.target.value)}
-            />
-          </Search>
-          </form>
-          </div>
+              <form onSubmit={handleSearch}>
+                <Search>
+                  <SearchIconWrapper>
+                    <SearchIcon style={{ color: 'white' }} />
+                  </SearchIconWrapper>
+                  <StyledInputBase
+                    placeholder="Search…"
+                    inputProps={{ 'aria-label': 'search' }}
+                    style={{ color: 'white' }}
+                    value={search ? search : ''}
+                    onChange={(e) => setSearch(e.target.value)}
+                  />
+                </Search>
+              </form>
+            </div>
             <div style={{ marginRight: '10px' }}>
-            <Link to="/cart" style={{ color: 'white' }}>
+              <Link to="/cart" style={{ color: 'white' }}>
                 <CartIcon itemCount={cartCount} />
-            </Link>
-              </div>
+              </Link>
+            </div>
             {userInfo ? (
               <>
                 <Box sx={{ flexGrow: 0 }}>
@@ -315,13 +309,13 @@ const Header = () => {
                     open={Boolean(anchorElUser)}
                     onClose={handleCloseUserMenu}
                   >
-                    <LinkContainer to = {`/favorites/${userInfo._id}`}>
+                    <LinkContainer to={`/favorites/${userInfo._id}`}>
                       <MenuItem key='fav'>
                         <Typography textAlign="center">My Favorites</Typography>
                       </MenuItem>
                     </LinkContainer>
 
-                    <LinkContainer to = {`/myorder/${userInfo._id}`}>
+                    <LinkContainer to={`/myorder/${userInfo._id}`}>
                       <MenuItem key='fav'>
                         <Typography textAlign="center">My Orders</Typography>
                       </MenuItem>
@@ -340,7 +334,7 @@ const Header = () => {
                 </Box>
               </>
             ) : (
-               <>
+              <>
                 <LinkContainer to="/register" className="mx-2">
                   <Button variant="contained">Register</Button>
                 </LinkContainer>
