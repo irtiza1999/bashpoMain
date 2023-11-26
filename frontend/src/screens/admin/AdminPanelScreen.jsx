@@ -31,91 +31,81 @@ export default function ClippedDrawer() {
           [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
         }}
       >
-        <Box sx={{ overflow: 'auto' }} style={{marginTop:'40px'}}>
+        <Box sx={{ overflow: 'auto' }} style={{ marginTop: '40px' }}>
           <List>
-              <ListItem disablePadding>
-                <ListItem>
-                  <ListItemIcon>
-                    <AdminPanelSettingsIcon />
-                  </ListItemIcon>
-                  <ListItemText primary={'Admin Panel'} />
-                </ListItem>
+            <ListItem disablePadding>
+              <ListItem>
+                <ListItemIcon>
+                  <AdminPanelSettingsIcon />
+                </ListItemIcon>
+                <ListItemText primary={'Admin Panel'} />
               </ListItem>
+            </ListItem>
           </List>
           <Divider />
           <List>
-          <LinkContainer to='/'>
+            <LinkContainer to='/'>
               <ListItem disablePadding>
-              <ListItemButton>
+                <ListItemButton>
                   <ListItemIcon>
                     <HomeIcon />
                   </ListItemIcon>
                   <ListItemText primary={'Home'} />
                 </ListItemButton>
               </ListItem>
-          </LinkContainer>
+            </LinkContainer>
           </List>
           <Divider />
           <List>
             <LinkContainer to='/admin/userslist'>
-                <ListItem disablePadding>
-                    <ListItemButton>
-                    <ListItemIcon>
-                        <SupervisedUserCircleIcon />
-                    </ListItemIcon>
-                        <ListItemText primary={'Manage Customers'} />
-                    </ListItemButton>
-                </ListItem>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <SupervisedUserCircleIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={'Manage Customers'} />
+                </ListItemButton>
+              </ListItem>
             </LinkContainer>
             <LinkContainer to='/admin/orders'>
-                <ListItem disablePadding>
-                    <ListItemButton>
-                    <ListItemIcon>
-                        <ListAltIcon />
-                    </ListItemIcon>
-                        <ListItemText primary={'Manage Orders'} />
-                    </ListItemButton>
-                </ListItem>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <ListAltIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={'Manage Orders'} />
+                </ListItemButton>
+              </ListItem>
             </LinkContainer>
             <LinkContainer to='/admin/productslist'>
-                <ListItem disablePadding>
-                    <ListItemButton>
-                    <ListItemIcon>
-                        <InventoryIcon />
-                    </ListItemIcon>
-                        <ListItemText primary={'Manage Products'} />
-                    </ListItemButton>
-                </ListItem>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <InventoryIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={'Manage Products'} />
+                </ListItemButton>
+              </ListItem>
             </LinkContainer>
-            <LinkContainer to='/admin/artistlist'>
-                <ListItem disablePadding>
-                    <ListItemButton>
-                    <ListItemIcon>
-                        <ColorLensIcon />
-                    </ListItemIcon>
-                        <ListItemText primary={'Manage Artists'} />
-                    </ListItemButton>
-                </ListItem>
-            </LinkContainer>
-             <LinkContainer to='/admin/reviewslist'>
-                <ListItem disablePadding>
-                    <ListItemButton>
-                    <ListItemIcon>
-                        <ReviewsIcon />
-                    </ListItemIcon>
-                        <ListItemText primary={'Manage Reviews'} />
-                    </ListItemButton>
-                </ListItem>
+            <LinkContainer to='/admin/reviewslist'>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <ReviewsIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={'Manage Reviews'} />
+                </ListItemButton>
+              </ListItem>
             </LinkContainer>
             <LinkContainer to='/admin/sales'>
-                <ListItem disablePadding>
-                    <ListItemButton>
-                    <ListItemIcon>
-                        <MonetizationOnIcon />
-                    </ListItemIcon>
-                        <ListItemText primary={'Sales and Analytics'} />
-                    </ListItemButton>
-                </ListItem>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <MonetizationOnIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={'Sales and Analytics'} />
+                </ListItemButton>
+              </ListItem>
             </LinkContainer>
           </List>
         </Box>
