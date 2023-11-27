@@ -250,13 +250,6 @@ const Header = () => {
             </Box>
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' } }}>
               <div style={{ marginRight: '10px' }}>
-                {userInfo && userInfo.artists && (
-                  <LinkContainer to="/artist/panel" style={{ color: 'white' }}>
-                    <Button variant="contained" color="info" className='btn-sm'>
-                      <GroupWorkIcon /> Artist Dashboard
-                    </Button>
-                  </LinkContainer>
-                )}
               </div>
             </Box>
 

@@ -10,6 +10,8 @@ import orderRoute from './routes/orderRoute.js';
 import reviewRoute from './routes/reviewRoute.js';
 import artistRoute from './routes/artistRoute.js';
 import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
 const port = process.env.PORT || 5000;
 
@@ -17,6 +19,13 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
+// app.use(express.static(path.join(__dirname, '../frontend/dist')))
+// app.get("*", function(req, res){
+//   res.sendFile(path.join(__dirname, '../frontend/dist/index.html'))
+// })
 
 connectDB();
 app.use('/api/users', userRoutes);

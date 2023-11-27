@@ -30,7 +30,7 @@ const OrderScreen = () => {
   const [payOrder, { isLoading: loadingPay }] = usePayOrderMutation();
 
   const [deliverOrder, { isLoading: loadingDeliver }] =
-  useMarkAsDeliveredMutation();
+    useMarkAsDeliveredMutation();
 
   const { userInfo } = useSelector((state) => state.auth);
 
@@ -62,7 +62,7 @@ const OrderScreen = () => {
   useEffect(() => {
     refetch();
   },);
-  
+
   function onError(err) {
     toast.error(err.message);
   }
@@ -105,11 +105,11 @@ const OrderScreen = () => {
 
   const cancelOrderHandler = async (orderId) => {
     try {
-      const res = await cancelOrder({orderId :orderId})
+      const res = await cancelOrder({ orderId: orderId })
       console.log(res);
-      if(res.error){
-          toast.error(res.error.data.message);
-      }else{
+      if (res.error) {
+        toast.error(res.error.data.message);
+      } else {
         toast.success('Order Cancelled Successfully!!');
         refetch();
       }
@@ -124,7 +124,7 @@ const OrderScreen = () => {
     <Message variant='error'>{error}</Message>
   ) : (
     <>
-      <h3 style = {{paddingTop: '70px'}}>Order ID {order._id}</h3>
+      <h3 style={{ paddingTop: '70px' }}>Order ID {order._id}</h3>
       <Row>
         <Col md={8}>
           <ListGroup variant='flush'>
@@ -176,7 +176,7 @@ const OrderScreen = () => {
                       <Row>
                         <Col md={1}>
                           <Image
-                            src={imageBaseUrl+item.image}
+                            src={item.image}
                             alt={item.name}
                             fluid
                             rounded
@@ -188,7 +188,7 @@ const OrderScreen = () => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                           ${item.price} x {item.qty} = <b>${item.qty * item.price}</b>
+                          ${item.price} x {item.qty} = <b>${item.qty * item.price}</b>
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -228,7 +228,7 @@ const OrderScreen = () => {
                   <Col>${order.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              {!order.isCancelled && !order.isPaid && userInfo._id === order.user._id &&(
+              {!order.isCancelled && !order.isPaid && userInfo._id === order.user._id && (
                 <ListGroup.Item>
                   {loadingPayPal || isLoading && <Loader />}
 
@@ -238,11 +238,11 @@ const OrderScreen = () => {
                     <div>
                       <div>
                         <PayPalScriptProvider options={{ 'client-id': paypal.clientId, currency: 'USD' }}>
-                        <PayPalButtons
-                          createOrder={createOrder}
-                          onApprove={onApprove}
-                          onError={onError}
-                        ></PayPalButtons>
+                          <PayPalButtons
+                            createOrder={createOrder}
+                            onApprove={onApprove}
+                            onError={onError}
+                          ></PayPalButtons>
                         </PayPalScriptProvider>
                       </div>
                     </div>
@@ -250,33 +250,33 @@ const OrderScreen = () => {
                 </ListGroup.Item>
               )}
               {userInfo && order &&
-                order.isPaid  &&(
+                order.isPaid && (
                   <ListGroup.Item>
-                  <Button variant="success" onClick={() => reOrderHandler(order)} style={{marginTop:'10px'}}>
-                        Reorder
-                  </Button>
+                    <Button variant="success" onClick={() => reOrderHandler(order)} style={{ marginTop: '10px' }}>
+                      Reorder
+                    </Button>
                   </ListGroup.Item>
                 )}
               {userInfo &&
                 !order.isPaid &&
-                !order.isCancelled &&(
+                !order.isCancelled && (
                   <ListGroup.Item>
-                  <Button variant="danger" onClick={() => cancelOrderHandler(order)} style={{marginTop:'10px'}}>
-                        Cancel Order
-                  </Button>
+                    <Button variant="danger" onClick={() => cancelOrderHandler(order)} style={{ marginTop: '10px' }}>
+                      Cancel Order
+                    </Button>
                   </ListGroup.Item>
                 )
-                }
+              }
 
               {order.isCancelled && (
                 <ListGroup.Item>
                   <Message variant='error'>Order Cancelled</Message>
-                  </ListGroup.Item>)}
+                </ListGroup.Item>)}
               {userInfo &&
                 order.isPaid &&
                 userInfo.admin &&
                 !order.isDelivered &&
-                userInfo._id !==  order.user._id &&
+                userInfo._id !== order.user._id &&
                 (
                   <ListGroup.Item>
                     <Button

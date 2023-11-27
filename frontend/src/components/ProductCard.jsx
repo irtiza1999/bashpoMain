@@ -100,7 +100,7 @@ const ProductCard = ({ product }) => {
               <div>
                 <CardMedia
                   component="img"
-                  image={imageBaseUrl + product.image}
+                  image={product.image}
                   alt={product.name}
                   style={{
                     width: '100%', height: '15vw',

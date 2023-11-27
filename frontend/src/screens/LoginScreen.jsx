@@ -40,8 +40,13 @@ const LoginScreen = () => {
     }
   }, []);
 
+  useEffect(() => {
+    if (userInfo) {
+      navigate('/');
+    }
+  }, []);
   const navigateToPort3001 = () => {
-    window.location.href = 'http://localhost:3001';
+    window.location.href = 'https://thlab.techavens.com/';
   };
   const submitHandler = async (e) => {
     e.preventDefault();

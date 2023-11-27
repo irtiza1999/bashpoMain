@@ -14,7 +14,7 @@ const PlaceOrderScreen = () => {
   const imageBaseUrl = 'http://localhost:5000/uploads/';
 
   const cart = useSelector((state) => state.cart);
-  const {userInfo} = useSelector(state => state.auth);
+  const { userInfo } = useSelector(state => state.auth);
 
   const [createOrder, { isLoading, error }] = useCreateOrderMutation();
 
@@ -79,7 +79,7 @@ const PlaceOrderScreen = () => {
                       <Row>
                         <Col md={1}>
                           <Image
-                            src={imageBaseUrl+item.image}
+                            src={item.image}
                             alt={item.name}
                             fluid
                             rounded
@@ -91,7 +91,7 @@ const PlaceOrderScreen = () => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                           ${item.price} x {item.qty} = ${item.qty * item.price}
+                          ${item.price} x {item.qty} = ${item.qty * item.price}
                         </Col>
                       </Row>
                     </ListGroup.Item>

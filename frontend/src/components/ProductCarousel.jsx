@@ -52,13 +52,13 @@ function ProductCarousel() {
                 </div>
                 <img
                   className="d-block w-100"
-                  src={imageBaseUrl+product.image}
+                  src={product.image}
                   alt="Product"
                   style={{ maxHeight: 'calc(60vh - 120px)', objectFit: 'contain' }}
                 />
                 <div style={{ marginTop: '10px' }}>
                   <h5 style={{ color: '#333', fontSize: '24px', fontWeight: 'bold' }}>{product.name}</h5>
-                  <Rating value={product.rating} readOnly/>
+                  <Rating value={product.rating} readOnly />
                   <b><p style={{ color: '#777', fontSize: '16px' }}>${product.price}</p></b>
                 </div>
               </div>
