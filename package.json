@@ -14,6 +14,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
+    "@material-tailwind/react": "^2.1.4",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
     "@mui/material": "^5.13.1",
@@ -28,11 +30,13 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
+    "express-fileupload": "^1.4.3",
     "firebase": "^8.10.1",
     "jsonwebtoken": "^9.0.0",
     "mongodb": "^5.5.0",
     "mongoose": "^7.1.1",
     "multer": "^1.4.5-lts.1",
+    "multer-sftp": "^1.1.1",
     "nodemon": "^3.0.1",
     "otp-input-react": "^0.3.0",
     "passport-google-oauth20": "^2.0.0",
@@ -45,6 +49,7 @@
     "react-router-dom": "^6.11.1",
     "react-social-login-buttons": "^3.9.1",
     "reactjs-social-login": "^2.6.2",
+    "ssh2-sftp-client": "^9.1.0",
     "styled-components": "^5.3.10"
   },
   "devDependencies": {

@@ -29,6 +29,7 @@ import InputBase from '@mui/material/InputBase';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import GroupWorkIcon from '@mui/icons-material/GroupWork';
 import { setCredentials } from '../slices/authSlice';
+import { useTheme } from '@mui/material/styles';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -72,6 +73,19 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const Header = () => {
+  const theme = useTheme();
+
+  const appBarStyle = {
+    background: 'black',
+    height: theme.spacing(8), // Adjust height using theme spacing for consistency
+    width: '100%',
+    [theme.breakpoints.down('sm')]: { // Adjust style for small devices
+      height: theme.spacing(7),
+    },
+    [theme.breakpoints.up('md')]: { // Adjust style for medium and larger devices
+      height: theme.spacing(8),
+    }
+  };
   const [search, setSearch] = useState('');
   const { userInfo } = useSelector(state => state.auth);
   const dispatch = useDispatch();
@@ -129,9 +143,29 @@ const Header = () => {
     setSearch('');
   }, []);
 
+
+  const desktopStyle = {
+    color: 'white',
+    height: '55px',
+    marginRight: '20px',
+    marginLeft: '-20px',
+    marginTop: '5px',
+    width: '100px',
+    fontSize: 'smaller',
+    padding: '5px 10px',
+  };
+
+  // Media query for mobile devices
+  const mobileStyle = {
+    ...desktopStyle,
+    fontSize: 'medium', // larger font size for mobile
+    padding: '5px 15px', // increased padding for a larger touch target
+    width: 'auto', // adjust width based on content
+    marginRight: '10px', // adjust margin for smaller screens
+  };
   return (
     <div style={{ marginBottom: '30px' }}>
-      <AppBar position="fixed" style={{ background: 'black' }}>
+      <AppBar position="fixed" style={appBarStyle}>
 
         <Container maxWidth="xl">
           <Toolbar disableGutters>
@@ -193,7 +227,33 @@ const Header = () => {
                 ) : error ? (
                   <Loader />
                 ) : (
-                  <>
+
+                  <div>
+                    <LinkContainer to={`/`}>
+                      <Typography
+                        variant="h6"
+                        noWrap
+                        component="a"
+                        sx={{
+                          mr: 2,
+                          // display: { xs: 'none', md: 'flex' },
+                          fontFamily: 'monospace',
+                          fontWeight: 700,
+                          letterSpacing: '.3rem',
+                          color: 'white',
+                          textDecoration: 'none',
+                        }}
+
+                      >
+                        <img
+                          src="https://dl.dropboxusercontent.com/s/5ajwo527jc1bmv1/logo.png?dl=0"
+                          alt="logo"
+                          width="50px"
+                          height="50px"
+                          style={{ marginLeft: "10px", marginBottom: "-30px" }}
+                        />
+                      </Typography>
+                    </LinkContainer>
                     {categories.map((category) => (
                       <LinkContainer to={`/${category}`}>
                         <MenuItem key={category} onClick={handleCloseNavMenu}>
@@ -201,7 +261,7 @@ const Header = () => {
                         </MenuItem>
                       </LinkContainer>
                     ))}
-                  </>
+                  </div>
                 )}
               </Menu>
             </Box>
@@ -222,7 +282,6 @@ const Header = () => {
                   textDecoration: 'none',
                 }}
               >
-                <Typography textAlign="center">LOGO</Typography>
               </Typography>
             </LinkContainer>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -252,6 +311,16 @@ const Header = () => {
               <div style={{ marginRight: '10px' }}>
               </div>
             </Box>
+
+            {userInfo && userInfo.admin && (
+              <LinkContainer to="/admin/userslist" style={window.innerWidth < 768 ? mobileStyle : desktopStyle}>
+                <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                  {/* <AdminPanelSettingsIcon />  */}
+                  <small>Admin Panel</small>
+                </button>
+              </LinkContainer>
+            )}
+
 
             <div style={{ marginRight: '10px' }}>
               <form onSubmit={handleSearch}>
@@ -328,12 +397,13 @@ const Header = () => {
               </>
             ) : (
               <>
-                <LinkContainer to="/register" className="mx-2">
-                  <Button variant="contained">Register</Button>
+                <LinkContainer to="/register" className="mx-3">
+                  <Button variant="contained"><small style={{ fontSize: "11px" }}>Register</small></Button>
                 </LinkContainer>
                 <LinkContainer to="/login">
-                  <Button variant="contained" color="success">
+                  <Button color="success" variant="contained"><small style={{ fontSize: "11px" }}>
                     Login
+                  </small>
                   </Button>
                 </LinkContainer>
               </>
@@ -342,7 +412,7 @@ const Header = () => {
         </Container>
       </AppBar>
       <Toolbar />
-    </div>
+    </div >
   );
 };
 

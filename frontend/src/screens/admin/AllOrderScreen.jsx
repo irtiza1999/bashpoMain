@@ -36,12 +36,11 @@ const AllOrderScreen = () => {
       navigate(`/admin/orders/filter/${event.target.value}`)
     }
   };
-  return (
+  return <>
+    <AdminPanelScreen />
     <Grid container spacing={2}>
-      <Grid item xs={2}>
-        <AdminPanelScreen />
-      </Grid>
-      <Grid item xs={10}>
+
+      <Grid item xs={12}>
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item style={{ margin: '10px' }}>
             <Typography variant="h3">All Orders</Typography>
@@ -80,7 +79,7 @@ const AllOrderScreen = () => {
         ) : orders && orders.length === 0 ? (
           <Message>No orders found.</Message>
         ) : (
-          <Paper>
+          <Paper style={{ overflowX: 'auto' }}>
             <Table>
               <TableHead>
                 <TableRow>
@@ -99,8 +98,6 @@ const AllOrderScreen = () => {
                       <TableCell><b>{order._id}</b></TableCell>
                     </LinkContainer>
                     <TableCell>{order.user && order.user.name ? order.user.name : "User not found"}</TableCell>
-                    <Typography variant="body1">
-                    </Typography>
 
                     <TableCell>${order.totalPrice}</TableCell>
                     {order.isPaid ? (
@@ -170,6 +167,7 @@ const AllOrderScreen = () => {
         )}
       </Grid>
     </Grid>
-  );
+    );
+  </>
 };
 export default AllOrderScreen;

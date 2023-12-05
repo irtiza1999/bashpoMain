@@ -44,18 +44,17 @@ const getCategoryProducts = asyncHandler(async (req, res) => {
   });
 
 
-//post a product private admin
 const createProduct = asyncHandler(async (req, res) => {
-    const {name,size,description,category,artists, style, 
-        subject, medium ,price,countInStock,image, isVerified} = req.body;
+    const { name, size, description, category: initialCategory, artists, style, subject, medium, price, countInStock, image, isVerified } = req.body;
     const product = await Product.findOne({ name });
-    if(product){
+    if (product) {
         res.status(400);
         throw new Error('Product already exists');
-    }
-    else{
+    } else {
         const imageName = (req.file) ? req.file.filename : null;
-        const category = category.toUpperCase();
+
+        const category = initialCategory.toUpperCase();
+
         const newProduct = await Product.create({
             name,
             size,
@@ -70,24 +69,15 @@ const createProduct = asyncHandler(async (req, res) => {
             image: imageName,
             isVerified
         });
-        if(newProduct){
-            res.status(201).json({
-                name : product.name,
-                description : product.description,
-                category : product.category,
-                price : product.price,
-                countInStock : product.countInStock,
-                image : product.image,
-                isVerified : product.isVerified
-            });
-        }else{
+        if (newProduct) {
+            res.status(201);
+        } else {
             res.status(400);
             throw new Error('Invalid product data');
         }
-    
     }
-        
 });
+
 
 //update a product private admin
 const updateProduct = asyncHandler(async (req, res) => {

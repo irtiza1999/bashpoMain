@@ -31,7 +31,7 @@ import MyOrderScreen from './screens/MyOrderScreen.jsx'
 import AdminAllProductScreen from './screens/admin/AdminAllProductScreen.jsx'
 import AllReviewScreen from './screens/admin/AllReviewScreen.jsx'
 import FilterOrderScreen from './screens/admin/FilterOrderScreen.jsx'
-import ArtistAddProductScreen from './screens/ArtistAddProductScreen.jsx'
+import AdminAddProductScreen from './screens/admin/AdminAddProductScreen.jsx'
 import MyFilterOrderScreen from './screens/MyFilterOrderScreen.jsx'
 import SalesScreen from './screens/admin/SalesScreen.jsx'
 // import OtpScreen from './screens/OtpScreen.jsx'
@@ -56,7 +56,7 @@ const router = createBrowserRouter(
       <Route path='' element={<PrivateRoute />}> <Route path='/order/:id' element={<OrderScreen />} /> </Route>
       <Route path='' element={<PrivateRoute />}> <Route path='/myorder/:userId' element={<MyOrderScreen />} /> </Route>
       <Route path='' element={<PrivateRoute />}> <Route path='/myorder/:userId/filter/:filter' element={<MyFilterOrderScreen />} /> </Route>
-      <Route path='' element={<PrivateRoute />}><Route path='/artist/addproduct' element={<ArtistAddProductScreen />} /></Route>
+      <Route path='' element={<AdminRoute />}><Route path='/admin/addproduct' element={<AdminAddProductScreen />} /></Route>
       <Route path='' element={<AdminRoute />}> <Route path='/admin' element={<AdminPanelScreen />} /> </Route>
       <Route path='' element={<AdminRoute />}> <Route path='/admin/orders' element={<AllOrderScreen />} /> </Route>
       <Route path='' element={<AdminRoute />}> <Route path='/admin/userslist' element={<AllUserScreen />} /> </Route>

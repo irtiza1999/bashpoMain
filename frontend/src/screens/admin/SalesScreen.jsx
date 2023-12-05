@@ -7,26 +7,26 @@ import TopCategoryBySale from '../../components/TopCategoryBySale.jsx';
 const SalesScreen = () => {
 
   return (
-    <Grid container spacing={2}>
-       <Grid item xs={2}>
-        <AdminPanelScreen />
+    <>
+      <AdminPanelScreen />
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <div>
+            <h3 style={{ textAlign: 'center', marginTop: '10px' }}>Monthly Sales Chart</h3>
+            <MonthlySales />
+          </div>
+          <div>
+            <h3 style={{ textAlign: 'center', marginTop: '10px' }}>Products Driving Most Sales</h3>
+            <TopProductBySale />
+          </div>
+          <div>
+            <h3 style={{ textAlign: 'center', marginTop: '10px' }}>Categories Driving Most Sales</h3>
+            <TopCategoryBySale />
+          </div>
+        </Grid>
       </Grid>
-      <Grid item xs={10}>
-        <div>
-          <h3 style={{textAlign:'center', marginTop:'10px'}}>Monthly Sales Chart</h3>
-          <MonthlySales />
-        </div>
-        <div>
-          <h3 style={{textAlign:'center', marginTop:'10px'}}>Products Driving Most Sales</h3>
-          <TopProductBySale />
-        </div>
-        <div>
-          <h3 style={{textAlign:'center', marginTop:'10px'}}>Categories Driving Most Sales</h3>
-          <TopCategoryBySale />
-        </div>
-      </Grid>
-      </Grid>
-        
+    </>
+
   )
 }
 

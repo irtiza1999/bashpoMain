@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
+// import CardMedia from '@mui/material/CardMedia';
+// import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions, IconButton, Tooltip } from '@mui/material';
 import { useSpring, animated } from 'react-spring';
 import CartButton from './CartButton';
@@ -18,6 +18,15 @@ import { Grid } from '@mui/material';
 import Rating from '@mui/material/Rating';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 import GppMaybeIcon from '@mui/icons-material/GppMaybe';
+
+import {
+  // Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  // Button,
+} from "@material-tailwind/react";
 
 
 const AnimatedCard = animated(Card);
@@ -98,16 +107,20 @@ const ProductCard = ({ product }) => {
           <LinkContainer to={`/product/${product._id}`}>
             <CardActionArea>
               <div>
-                <CardMedia
-                  component="img"
-                  image={product.image}
-                  alt={product.name}
-                  style={{
-                    width: '100%', height: '15vw',
-                    objectFit: 'cover'
-                  }}
-                  position="top"
-                />
+                <CardHeader color="blue-gray" className="relative h-56"
+                // component="img"
+                // alt={product.name}
+                // style={{
+                //   width: '100%', height: '15vw',
+                //   objectFit: 'cover'
+                // }}
+                // position="top"
+                >
+                  <img
+                    src={product.image}
+                    alt="card-image"
+                  />
+                </CardHeader>
               </div>
               <CardContent>
                 <Typography gutterBottom variant="h6" component="div">

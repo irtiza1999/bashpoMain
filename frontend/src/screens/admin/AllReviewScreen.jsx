@@ -37,61 +37,61 @@ const AllReviewScreen = () => {
 
 
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={2}>
-        <AdminPanelScreen />
-      </Grid>
-      <Grid item xs={10}>
-        <Typography variant="h3" style={{ margin: '10px' }}>All Reviews</Typography>
-        {isLoading ? (
-          <Loader />
-        ) : error ? (
-          <Message severity="error">{error}</Message>
-        ) : reviews.length === 0 ? (<Message severity="info">No reviews found</Message>) : (
-          <Paper elevation={3}>
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell>ID</TableCell>
-                  <TableCell>USER</TableCell>
-                  <TableCell>PRODUCT</TableCell>
-                  <TableCell>RATING</TableCell>
-                  <TableCell>COMMENT</TableCell>
-                  <TableCell>PRODUCT CURRENT RATING</TableCell>
-                  <TableCell>DELETE</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {reviews.map((review) => (
-                  <TableRow key={review._id}>
-                    <TableCell>{review._id}</TableCell>
-                    <TableCell>{review.user && review.user.name ? review.user.name : "User not found"}</TableCell>
-                    <TableCell>
-                      <Link to={`/product/${review.product._id}`}>
-                        <span>{review.product.name}</span>
-                      </Link>
-                    </TableCell>
-                    <TableCell>{review.rating}</TableCell>
-                    <TableCell>{review.comment}</TableCell>
-                    <TableCell>{review.product.rating}</TableCell>
-                    <TableCell>
-                      <Button
-                        variant="contained"
-                        color="secondary"
-                        onClick={() => handleDeleteReview(review._id)}
-                      >
-                        Delete
-                      </Button>
-                    </TableCell>
+    <>
+      <AdminPanelScreen />
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Typography variant="h3" style={{ margin: '10px' }}>All Reviews</Typography>
+          {isLoading ? (
+            <Loader />
+          ) : error ? (
+            <Message severity="error">{error}</Message>
+          ) : reviews.length === 0 ? (<Message severity="info">No reviews found</Message>) : (
+            <Paper elevation={3}>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>ID</TableCell>
+                    <TableCell>USER</TableCell>
+                    <TableCell>PRODUCT</TableCell>
+                    <TableCell>RATING</TableCell>
+                    <TableCell>COMMENT</TableCell>
+                    <TableCell>PRODUCT CURRENT RATING</TableCell>
+                    <TableCell>DELETE</TableCell>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </Paper>
+                </TableHead>
+                <TableBody>
+                  {reviews.map((review) => (
+                    <TableRow key={review._id}>
+                      <TableCell>{review._id}</TableCell>
+                      <TableCell>{review.user && review.user.name ? review.user.name : "User not found"}</TableCell>
+                      <TableCell>
+                        <Link to={`/product/${review.product._id}`}>
+                          <span>{review.product.name}</span>
+                        </Link>
+                      </TableCell>
+                      <TableCell>{review.rating}</TableCell>
+                      <TableCell>{review.comment}</TableCell>
+                      <TableCell>{review.product.rating}</TableCell>
+                      <TableCell>
+                        <Button
+                          variant="contained"
+                          color="secondary"
+                          onClick={() => handleDeleteReview(review._id)}
+                        >
+                          Delete
+                        </Button>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Paper>
 
-        )}
+          )}
+        </Grid>
       </Grid>
-    </Grid>
+    </>
   );
 };
 

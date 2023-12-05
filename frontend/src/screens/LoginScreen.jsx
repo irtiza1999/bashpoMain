@@ -52,32 +52,12 @@ const LoginScreen = () => {
     e.preventDefault();
     try {
       const res = await login({ email, password }).unwrap();
-      dispatch(setOtpVerified({ ...res }));
-      navigateToPort3001();
+      dispatch(setCredentials({ ...res }));
+      navigate(location.state?.from || '/');
     } catch (err) {
       toast.error(err?.data?.message || err?.error);
     }
   };
-
-
-  const handleMessage = (event) => {
-    if (event.data.type === 'OTP_VERIFIED') {
-      // componentWillUnmount();
-    }
-  };
-  const handleGoogleLogin = async (response) => {
-    if (response && response.provider === 'google') {
-      const { email, name } = response.data;
-      try {
-        const res = await googleLogin({ email }).unwrap();
-        dispatch(setCredentials({ ...res }));
-        navigate(location.state?.from || '/');
-      } catch (err) {
-        toast.error(err?.data?.message || err?.error);
-      }
-    }
-  };
-
   return (
     <Grid container spacing={2}>
       <Grid item xs={3} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -104,25 +84,6 @@ const LoginScreen = () => {
             </Form.Group>
             {isLoading && <Loader />}
             <Button type='submit' variant='primary' className='mt-3'>Login</Button>
-            <Row className='py-3'>
-              <Col>
-                <LoginSocialGoogle
-                  client_id={"344095228693-51ag8162m29l3ocehqopu9a75sj3ptro.apps.googleusercontent.com"}
-                  scope="openid profile email"
-                  discoveryDocs="claims_supported"
-                  access_type="offline"
-                  onResolve={handleGoogleLogin}
-                  onReject={(err) => {
-                    console.log(err);
-                  }}
-                >
-                  <GoogleLoginButton style={{
-                    borderRadius: "4px",
-                    fontWeight: "bold",
-                  }} />
-                </LoginSocialGoogle>
-              </Col>
-            </Row>
             <Row className='py-3'>
               <Col>
                 New Customer? <Link to='/register'>Register</Link>
