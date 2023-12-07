@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useGetCategoryQuery } from '../slices/productsApiSlice';
 import Loader from './Loader';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -31,8 +31,10 @@ import GroupWorkIcon from '@mui/icons-material/GroupWork';
 import { setCredentials } from '../slices/authSlice';
 import { useTheme } from '@mui/material/styles';
 import logo from '../../../uploads/logo.webp';
+import SearchBar from './SearchBar';
 
 const HeaderBar = () => {
+    const navigate = useNavigate();
     const { data: categories, isLoading, isError, error } = useGetCategoryQuery();
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const { userInfo } = useSelector(state => state.auth);
@@ -40,6 +42,64 @@ const HeaderBar = () => {
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
+
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const dropdownRef = useRef(null);
+
+    const handleToggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    };
+
+    const handleClickOutside = (event) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            setIsDropdownOpen(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('click', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, []);
+
+
+    const cart = useSelector((state) => state.cart);
+    const { cartItems } = cart;
+    const [cartCount, setCartCount] = useState(0);
+
+    useEffect(() => {
+        {
+            setCartCount(cartItems.length);
+        }
+    }, [cartItems]);
+
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const dropdownRef2 = useRef(null);
+
+    const toggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen);
+    };
+
+    const closeDropdown = () => {
+        setDropdownOpen(false);
+    };
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef2.current && !dropdownRef2.current.contains(event.target)) {
+                closeDropdown();
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
 
     return (
         <div>
@@ -76,14 +136,15 @@ const HeaderBar = () => {
                                 </a>
                             </LinkContainer>
                         </div>
-                        <div className="flex items-center">
-                            <div className="flex items-center ms-3">
-                                <div>
+
+                        {userInfo ?
+                            (<div className="flex items-center">
+                                <div className="relative" ref={dropdownRef}>
                                     <button
                                         type="button"
                                         className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                                        aria-expanded="false"
-                                        data-dropdown-toggle="dropdown-user"
+                                        aria-expanded={isDropdownOpen}
+                                        onClick={handleToggleDropdown}
                                     >
                                         <span className="sr-only">Open user menu</span>
                                         <img
@@ -92,45 +153,122 @@ const HeaderBar = () => {
                                             alt="user photo"
                                         />
                                     </button>
+                                    {isDropdownOpen && (
+                                        <div className="z-50 absolute right-0 mt-2 w-48 bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600">
+                                            <div className="px-4 py-3">
+                                                <p className="text-sm text-gray-900 dark:text-white">Neil Sims</p>
+                                                <p className="text-sm font-medium text-gray-900 truncate dark:text-gray-300">
+                                                    neil.sims@flowbite.com
+                                                </p>
+                                            </div>
+                                            <ul className="py-1">
+                                                <li>
+                                                    <a
+                                                        href="#"
+                                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                        role="menuitem"
+                                                    >
+                                                        Dashboard
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="#"
+                                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                        role="menuitem"
+                                                    >
+                                                        Settings
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="#"
+                                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                        role="menuitem"
+                                                    >
+                                                        Earnings
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="#"
+                                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                        role="menuitem"
+                                                    >
+                                                        Sign out
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    )}
                                 </div>
-                                <div className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">
-                                    <div className="px-4 py-3" role="none">
-                                        <p className="text-sm text-gray-900 dark:text-white" role="none">
-                                            Neil Sims
-                                        </p>
-                                        <p className="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
-                                            neil.sims@flowbite.com
-                                        </p>
+                            </div>) :
+                            (
+                                <>
+                                    {/* Toggle button for small screens */}
+                                    <button
+                                        className="block md:hidden text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 
+          hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 
+          dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                                        onClick={toggleDropdown}
+                                    >
+                                        Menu
+                                    </button>
+
+                                    {/* Dropdown for small screens */}
+                                    {dropdownOpen && (
+                                        <div
+                                            ref={dropdownRef2}
+                                            className="md:hidden z-50 absolute right-0 mt-2 w-48 bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+                                        >
+                                            <LinkContainer to="/register">
+                                                <button
+                                                    className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                    onClick={closeDropdown}
+                                                >
+                                                    Register
+                                                </button>
+                                            </LinkContainer>
+                                            <LinkContainer to="/login">
+                                                <button
+                                                    className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                    onClick={closeDropdown}
+                                                >
+                                                    Login
+                                                </button>
+                                            </LinkContainer>
+                                        </div>
+                                    )}
+
+                                    {/* Buttons for medium and larger screens */}
+                                    <div className="hidden md:flex z-50 absolute right-0 md:right-60 lg:right-10">
+                                        <LinkContainer to="/register">
+                                            <button
+                                                className="text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 
+          hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 
+          dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center md:mr-4"
+                                            >
+                                                Register
+                                            </button>
+                                        </LinkContainer>
+                                        <LinkContainer to="/login">
+                                            <button
+                                                className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 
+          hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 
+          dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                                            >
+                                                Login
+                                            </button>
+                                        </LinkContainer>
                                     </div>
-                                    <ul className="py-1" role="none">
-                                        <li>
-                                            <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
-                                                Dashboard
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
-                                                Settings
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
-                                                Earnings
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
-                                                Sign out
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                                </>
+
+                            )
+                        }
                     </div>
+
                 </div>
             </nav>
-
             <aside
                 id="logo-sidebar"
                 className={`fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform ${isSidebarOpen ? '-translate-x-0' : '-translate-x-full'
@@ -145,16 +283,28 @@ const HeaderBar = () => {
                             <Loader />
                         ) : (
                             <>
-                                {Array.isArray(categories) &&
-                                    categories.map((category) => (
-                                        <li key={category}>
-                                            <LinkContainer to={`/${category}`}>
-                                                <a key={category} className="flex items-center p-1 text-gray-900 text-sm rounded-lg dark:text-dark hover:bg-lightBlue-100 dark:hover:bg-gray-200 group text-decoration-none">
-                                                    <span className="">{category.toUpperCase()}</span>
-                                                </a>
-                                            </LinkContainer>
-                                        </li>
-                                    ))}
+                                <div>
+                                    <div>
+                                        <div className='py-2'>
+                                            <Link to="/cart">
+                                                <CartIcon itemCount={cartCount} />
+                                            </Link>
+                                        </div>
+                                    </div>
+                                    <div className="">
+                                        <SearchBar />
+                                    </div>
+                                    {Array.isArray(categories) &&
+                                        categories.map((category) => (
+                                            <li key={category}>
+                                                <LinkContainer to={`/${category}`}>
+                                                    <a key={category} className="flex items-center p-2 text-gray-900 text-sm rounded-lg dark:text-dark hover:bg-lightBlue-100 dark:hover:bg-gray-200 group text-decoration-none">
+                                                        <span className="">{category.toUpperCase()}</span>
+                                                    </a>
+                                                </LinkContainer>
+                                            </li>
+                                        ))}
+                                </div>
                             </>
                         )}
                     </ul>
