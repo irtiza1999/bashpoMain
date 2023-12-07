@@ -6,6 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import Footer from "./components/footer";
 import styled from 'styled-components';
 import { Container, Row, Col } from "react-bootstrap";
+import ScrollToTop from "./components/ScrollToTop";
+
 
 const MainContent = styled.div`
   margin-top: 60px; /* Adjust the margin based on your header height */
@@ -25,36 +27,38 @@ const App = () => {
   const isAdminPanel = location.pathname.startsWith("/admin");
 
   return (
-    <AppContainer fluid>
-      <div className="my-2">
-        <Row>
-          <Col md={3} xs={12}>
-            <HeaderBar />
-          </Col>
-          <Col md={9} xs={12}>
-            {!isAdminPanel && (
-              <>
-                <ToastContainer
-                  position="bottom-right"
-                  autoClose={2000}
-                  hideProgressBar={false}
-                  newestOnTop={false}
-                  closeOnClick
-                  rtl={false}
-                  pauseOnFocusLoss={false}
-                  draggable
-                  theme="light"
-                />
-              </>
-            )}
-            <MainContent>
-              <Outlet />
-            </MainContent>
-          </Col>
-          {!isAdminPanel && <Footer />}
-        </Row>
-      </div>
-    </AppContainer>
+    <ScrollToTop>
+      <AppContainer fluid>
+        <div className="my-2">
+          <Row>
+            <Col md={3} xs={12} style={{ marginBottom: "50px" }}>
+              {!isAdminPanel && <HeaderBar />}
+            </Col>
+            <Col md={9} xs={12}>
+              {!isAdminPanel && (
+                <>
+                  <ToastContainer
+                    position="bottom-right"
+                    autoClose={2000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss={false}
+                    draggable
+                    theme="light"
+                  />
+                </>
+              )}
+              <MainContent>
+                <Outlet />
+              </MainContent>
+            </Col>
+            {!isAdminPanel && <Footer />}
+          </Row>
+        </div>
+      </AppContainer>
+    </ScrollToTop>
   );
 };
 

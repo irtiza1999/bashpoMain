@@ -137,6 +137,7 @@ const addToFavorite = asyncHandler(async (req, res) => {
     return res.status(404).json({ success: false, error: "User not found" });
   }
   const favoriteProducts = user.favoriteProducts;
+  
   res.status(200).json(favoriteProducts);
 });
 

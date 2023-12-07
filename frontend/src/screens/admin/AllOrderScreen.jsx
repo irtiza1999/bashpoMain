@@ -167,7 +167,6 @@ const AllOrderScreen = () => {
         )}
       </Grid>
     </Grid>
-    );
   </>
 };
 export default AllOrderScreen;
