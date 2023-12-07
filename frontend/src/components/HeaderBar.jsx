@@ -348,7 +348,7 @@ const HeaderBar = () => {
                                     </div>
                                     {Array.isArray(categories) &&
                                         categories.map((category) => (
-                                            <li key={category}>
+                                            <li key={category} onClick={toggleSidebar}>
                                                 <LinkContainer to={`/${category}`}>
                                                     <a key={category} className="flex items-center p-2 text-gray-900 text-sm rounded-lg dark:text-dark hover:bg-lightBlue-100 dark:hover:bg-gray-200 group text-decoration-none">
                                                         <span className="">{category.toUpperCase()}</span>
