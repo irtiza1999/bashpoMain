@@ -19,9 +19,7 @@ const Footer = () => {
           <div className="col-sm-3">
             <h4 className="title">About us</h4>
             <p>
-              Gallery Whisper: Unleash the beauty of fine art. Discover captivating artworks and sculptures from talented artists.
-              Shop securely, explore artist profiles, and immerse yourself in the world of artistic expression.
-              Join our vibrant community of art lovers. Experience the power of art at Gallery Whisper.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ullam?
             </p>
           </div>
           <div className="col-sm-3">
@@ -66,7 +64,7 @@ const Footer = () => {
         <hr />
         <div className="row text-center">
           <span style={{ color: '#fff' }}>
-            Copyright © Gallery Whisper
+            Copyright © BASHPO
             {' '}
             {new Date().getFullYear()}
           </span>

@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { Form, Button, Row, Col } from "react-bootstrap";
+import { Form, Button, Row, Col, FormCheck } from "react-bootstrap"; // Import FormCheck
 import Formcontainer from "../components/Formcontainer";
 import { useDispatch, useSelector } from "react-redux";
 import { useLoginMutation, useGoogleLoginMutation } from '../slices/userApiSlice';
@@ -14,22 +14,20 @@ import Image from 'react-bootstrap/Image';
 import { GoogleLoginButton } from "react-social-login-buttons";
 import { LoginSocialGoogle } from 'reactjs-social-login';
 
-
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isAgeVerified, setIsAgeVerified] = useState(false); // Add state for age verification checkbox
 
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
   const [result, setResult] = useState(null);
 
-
   const [login, { isLoading }] = useLoginMutation();
   const [googleLogin, { googleLoginIsLoading }] = useGoogleLoginMutation();
 
   const { userInfo } = useSelector(state => state.auth);
-
   const { otpInfo } = useSelector(state => state.otpInfo);
 
   useEffect(() => {
@@ -45,11 +43,17 @@ const LoginScreen = () => {
       navigate('/');
     }
   }, []);
+
   const navigateToPort3001 = () => {
     window.location.href = 'https://thlab.techavens.com/';
   };
+
   const submitHandler = async (e) => {
     e.preventDefault();
+    if (!isAgeVerified) {
+      toast.error('Please acknowledge that you are 18 years or older.');
+      return;
+    }
     try {
       const res = await login({ email, password }).unwrap();
       dispatch(setCredentials({ ...res }));
@@ -58,6 +62,7 @@ const LoginScreen = () => {
       toast.error(err?.data?.message || err?.error);
     }
   };
+
   return (
     <Grid container spacing={2}>
       <Grid item xs={3} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -82,8 +87,18 @@ const LoginScreen = () => {
               <Form.Label>Enter Password</Form.Label>
               <Form.Control type='password' placeholder='Enter Password' value={password} onChange={(e) => setPassword(e.target.value)}></Form.Control>
             </Form.Group>
+
+            <Form.Group controlId='ageVerification'>
+              <FormCheck
+                type="checkbox"
+                label="I am 18 years or older"
+                checked={isAgeVerified}
+                onChange={(e) => setIsAgeVerified(e.target.checked)}
+              />
+            </Form.Group>
+
             {isLoading && <Loader />}
-            <Button type='submit' variant='primary' className='mt-3'>Login</Button>
+            <Button type='submit' variant='primary' className='mt-3' disabled={!isAgeVerified}>Login</Button>
             <Row className='py-3'>
               <Col>
                 New Customer? <Link to='/register'>Register</Link>

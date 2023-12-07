@@ -30,6 +30,7 @@ import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import GroupWorkIcon from '@mui/icons-material/GroupWork';
 import { setCredentials } from '../slices/authSlice';
 import { useTheme } from '@mui/material/styles';
+import logo from '../../../uploads/logo.webp';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -185,7 +186,7 @@ const Header = () => {
                 }}
               >
                 <img
-                  src="https://dl.dropboxusercontent.com/s/5ajwo527jc1bmv1/logo.png?dl=0"
+                  src={logo}
                   alt="logo"
                   width="50px"
                   height="50px"
@@ -246,7 +247,7 @@ const Header = () => {
 
                       >
                         <img
-                          src="https://dl.dropboxusercontent.com/s/5ajwo527jc1bmv1/logo.png?dl=0"
+                          src={logo}
                           alt="logo"
                           width="50px"
                           height="50px"

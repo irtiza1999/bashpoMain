@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Form, Button, Row, Col } from "react-bootstrap";
+import { Form, Button, Row, Col, FormCheck } from "react-bootstrap"; // Import FormCheck
 import Formcontainer from "../components/Formcontainer";
 import { useDispatch, useSelector } from "react-redux";
 import { useRegisterMutation, useGoogleRegMutation } from '../slices/userApiSlice';
 import { setCredentials } from "../slices/authSlice";
-import { toast } from 'react-toastify'
+import { toast } from 'react-toastify';
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import Grid from '@mui/material/Grid';
@@ -13,12 +13,12 @@ import Image from 'react-bootstrap/Image';
 import { GoogleLoginButton } from "react-social-login-buttons";
 import { LoginSocialGoogle } from 'reactjs-social-login'
 
-
 const RegisterScreen = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [isAgeVerified, setIsAgeVerified] = useState(false); // Add state for age verification checkbox
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -35,13 +35,14 @@ const RegisterScreen = () => {
 
     const submitHandler = async (e) => {
         e.preventDefault();
-        if (password != confirmPassword) {
+        if (password !== confirmPassword) {
             toast.error('Passwords do not match');
-        }
-        else {
+        } else if (!isAgeVerified) {
+            toast.error('Please acknowledge that you are 18 years or older.');
+        } else {
             try {
                 const res = await register({ name, email, password }).unwrap();
-                // dispatch(setCredentials({...res}))
+                dispatch(setCredentials({ ...res }));
                 navigate('/login');
             } catch (err) {
                 toast.error(err?.data?.message || err?.error);
@@ -54,13 +55,14 @@ const RegisterScreen = () => {
             const { email, name } = response.data;
             try {
                 const res = await googleReg({ email, name }).unwrap();
-                dispatch(setCredentials({ ...res }))
+                dispatch(setCredentials({ ...res }));
                 navigate('/');
             } catch (err) {
                 <Message variant='error'>{toast.error(err?.data?.message || err?.error)}</Message>
             }
         }
     };
+
     return (
         <Grid container spacing={2}>
             <Grid item xs={3} style={{
@@ -74,11 +76,10 @@ const RegisterScreen = () => {
                     rounded
                     style={{ height: '200px', width: '200px' }}
                 />
-
             </Grid>
             <Grid item xs={9}>
                 <Formcontainer>
-                    <h1 style={{ paddingTop: '40px' }}>Sign In</h1>
+                    <h1 style={{ paddingTop: '40px' }}>Sign Up</h1>
                     <Form onSubmit={submitHandler}>
                         <Form.Group className='my-2' controlId='name'>
                             <Form.Label>Enter Name</Form.Label>
@@ -99,8 +100,18 @@ const RegisterScreen = () => {
                             <Form.Label>Enter Password</Form.Label>
                             <Form.Control type='password' placeholder='Confirm Password' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}></Form.Control>
                         </Form.Group>
+
+                        <Form.Group controlId='ageVerification'>
+                            <FormCheck
+                                type="checkbox"
+                                label="I am 18 years or older"
+                                checked={isAgeVerified}
+                                onChange={(e) => setIsAgeVerified(e.target.checked)}
+                            />
+                        </Form.Group>
+
                         {isLoading && <Loader />}
-                        <Button type='submit' variant='primary' className='mt-3'>Sign Up</Button>
+                        <Button type='submit' variant='primary' className='mt-3' disabled={!isAgeVerified}>Sign Up</Button>
                         <Row className='py-3'>
                             <Col>
                                 Already Have an Account? <Link to='/login'>Login</Link>
@@ -113,4 +124,4 @@ const RegisterScreen = () => {
     )
 }
 
-export default RegisterScreen
+export default RegisterScreen;

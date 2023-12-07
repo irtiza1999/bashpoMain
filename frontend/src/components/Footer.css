@@ -1,8 +1,11 @@
-/*FOOTER START///////////////////*/
+.main-content {
+  min-height: calc(10vh - 180px); /* Adjust this value to accommodate your footer's height */
+}
 .footer {
-	margin-top: 40px;
-    padding: 50px 0 20px 0;
-    background-color: #4834d4;
+	margin-top: 10em;
+	margin-bottom: auto;
+    padding: 20px 0;
+    background-color: rgb(37, 58, 243);
     color: #dedfe0;
 	border-radius: 50px;
 }

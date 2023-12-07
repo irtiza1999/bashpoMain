@@ -4,30 +4,31 @@ const productSchema = mongoose.Schema({
     name: {
         type: String,
         required: true,
-        unique:true
+        unique: true
     },
-    size: {
+    brand: {
         type: String,
+        // required: true,
+    },
+    flavor: {
+        type: String,
+        // required: true,
+    },
+    nicotineStrength: {
+        type: String,
+        // required: true,
     },
     description: {
         type: String,
-        required: true,
+        // required: true,
     },
     category: {
         type: String,
-        required: true,
+        // required: true,
     },
-    artists : {
+    deviceType: {
         type: String,
-    },
-    style : {
-        type: String,
-    },
-    subject: {
-        type: String,
-    },
-    medium: {
-        type: String,
+        // required: true,
     },
     price: {
         type: Number,
@@ -46,23 +47,22 @@ const productSchema = mongoose.Schema({
     numReviews: {
         type: Number,
         default: 0,
-        required: true,
+        // required: true,
     },
     rating: {
         type: Number,
         default: 0,
-        required: true,
+        // required: true,
     },
-    isVerified : {
+    isVerified: {
         type: Boolean,
         default: false,
     },
 
-},{
+}, {
     timestamps: true
 });
 
-
-const Product = mongoose.model("Product", productSchema);
+const Product = mongoose.model("products", productSchema);
 
 export default Product;
