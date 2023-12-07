@@ -4,3 +4,6 @@
   font-family: 'Roboto Condensed';
   }
    */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -101,7 +101,7 @@ const ProductCard = ({ product }) => {
 
 
   return (
-    <div style={{ padding: '10px', marginLeft: '-35px' }}>
+    <div style={{ padding: '10px' }}>
       <AnimatedCard style={{ ...animationProps, ...hoverProps, borderRadius: '10px' }}>
         <Card>
           <LinkContainer to={`/product/${product._id}`}>
@@ -129,17 +129,7 @@ const ProductCard = ({ product }) => {
                 <Typography gutterBottom variant="h8" component="div"
                 // style={{ display: 'flex', alignItems: 'center' }}
                 >
-                  {verifiedProduct ? (
-                    <>
-                      <DoneAllIcon sx={{ fontSize: 14, color: 'green', fontWeight: 'bold' }} />
-                      <span style={{ marginLeft: 5, color: 'green' }}>Verified</span>
-                    </>
-                  ) : (
-                    <>
-                      <GppMaybeIcon sx={{ fontSize: 14, color: 'red', fontWeight: 'bold' }} />
-                      <span style={{ marginLeft: 5, color: 'red' }}>Not Verified</span>
-                    </>
-                  )}
+
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {product.countInStock > 0 ? (

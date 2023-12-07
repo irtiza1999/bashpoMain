@@ -4,9 +4,9 @@ import ProductCarousel from './ProductCarousel';
 const Hero = () => {
   return (
     <div className=' py-5'>
-      <Container className='d-flex justify-content-center'>
-          <ProductCarousel />
-      </Container>
+      <div className='d-flex justify-content-center'>
+        <ProductCarousel />
+      </div>
     </div>
   );
 };

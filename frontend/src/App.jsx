@@ -1,50 +1,54 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "./components/header";
-import { Container } from "react-bootstrap";
+import HeaderBar from "./components/HeaderBar";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from "./components/footer";
+import styled from 'styled-components';
+import { Container, Row, Col } from "react-bootstrap";
 
-
+const MainContent = styled.div`
+  margin-top: 60px; /* Adjust the margin based on your header height */
+  @media (max-width: 768px) {
+    margin-top: 0; /* Remove the margin on smaller screens */
+  }
+`;
 
 const App = () => {
   const location = useLocation();
-  const isAdminPanel = location.pathname.startsWith("/admin"); // Replace with your admin panel path
+  const isAdminPanel = location.pathname.startsWith("/admin");
 
   return (
-    <>
-      {!isAdminPanel && (
-        <>
-          <Header style={{ marginBottom: '20px' }} />
-          <ToastContainer
-            position="bottom-right"
-            autoClose={2000}
-            hideProgressBar={false}
-            newestOnTop
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss={false}
-            draggable
-            theme="light"
-          />
-        </>
-      )}
-      <ToastContainer
-        position="bottom-right"
-        autoClose={2000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss={false}
-        draggable
-        theme="light"
-      />
-      <Container className="my-2">
-        <Outlet />
-        {!isAdminPanel && <Footer />}
-      </Container>
-    </>
+    <Container fluid>
+      <div className="my-2">
+        <Row>
+          <Col md={3} xs={12}>
+            <HeaderBar />
+          </Col>
+          <Col md={9} xs={12}>
+            {!isAdminPanel && (
+              <>
+                <ToastContainer
+                  position="bottom-right"
+                  autoClose={2000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick
+                  rtl={false}
+                  pauseOnFocusLoss={false}
+                  draggable
+                  theme="light"
+                />
+              </>
+            )}
+            <MainContent>
+              <Outlet />
+              {!isAdminPanel && <Footer />}
+            </MainContent>
+          </Col>
+        </Row>
+      </div>
+    </Container>
   );
 };
 

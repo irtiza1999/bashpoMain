@@ -184,7 +184,7 @@ const ProductScreen = () => {
                         <b>Out of Stock</b>
                       </Typography>
                     )}
-                    {data.verifiedProduct ? (
+                    {/* {data.verifiedProduct ? (
                       <>
                         <DoneAllIcon sx={{ fontSize: 14, color: 'green', fontWeight: 'bold' }} />
                         <span style={{ marginLeft: 5, color: 'green', fontSize: 12 }}>Verified</span>
@@ -194,7 +194,7 @@ const ProductScreen = () => {
                         <GppMaybeIcon sx={{ fontSize: 14, color: 'red', fontWeight: 'bold' }} />
                         <span style={{ marginLeft: 5, color: 'red', fontSize: 12 }}>Not Verified</span>
                       </>
-                    )}
+                    )} */}
                     <Typography>
                       <div style={{ marginTop: '10px' }}>
                         <LinkContainer to={`/${data.category}`} style={{ cursor: 'pointer', color: "blue" }}>
@@ -206,7 +206,7 @@ const ProductScreen = () => {
                   <Grid container direction="column" spacing={2}>
                     <Grid item>
                       <Typography variant="h6">
-                        {data.name} by <span><Link to={`/artist/${data.artists}`}>{data.artists}</Link></span>
+                        {data.name}
                       </Typography>
                     </Grid>
                     <Grid item>
@@ -214,7 +214,7 @@ const ProductScreen = () => {
                         <h6>{data.description}</h6>
                       </Typography>
                     </Grid>
-                    <Box
+                    {/* <Box
                       sx={{
                         border: '1px solid #ccc',
                         borderRadius: '8px',
@@ -245,7 +245,7 @@ const ProductScreen = () => {
                           </Grid>
                         )}
                       </Grid>
-                    </Box>
+                    </Box> */}
 
                     {isFavorite && userInfo &&
                       <>
@@ -311,7 +311,7 @@ const ProductScreen = () => {
                     </Grid>
                     {data.countInStock > 0 && data.isVerified && (
                       <Grid item style={{ marginLeft: '-10px' }}>
-                        <Button onClick={() => addToCartHandler(data, quan)} style={{ backgroundColor: '#4834d4', color: 'white' }}>Add to Cart</Button>
+                        <Button onClick={() => addToCartHandler(data, quan)} style={{ backgroundColor: '#0d6efd', color: 'white' }}>Add to Cart</Button>
                       </Grid>
                     )}
                   </Grid>
