@@ -24,6 +24,7 @@ const FavoritesScreen = () => {
       setIsFavorite(index !== -1);
     }
   }, [favProducts]);
+  console.log(favIsLoading);
 
   return (
     <div style={{ padding: '10px', textAlign: 'center', paddingTop: '50px' }}>

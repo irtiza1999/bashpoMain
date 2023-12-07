@@ -1,73 +1,62 @@
-import { useEffect } from 'react';
-import './Footer.css'
-import { LinkContainer } from 'react-router-bootstrap';
-import { Button } from '@mui/material';
 import { useGetCategoryQuery } from '../slices/productsApiSlice';
 import { FaCcAmex, FaCreditCard, FaPaypal, FaCcVisa } from 'react-icons/fa';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { userInfo } = useSelector(state => state.auth);
 
-  const { data: categories, isLoading, isError, error } = useGetCategoryQuery();
+  const { data: categories, isLoading } = useGetCategoryQuery();
+
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-3">
-            <h4 className="title">About us</h4>
+    <footer className="bg-gray-800 text-white py-8" style={{ marginBottom: "-15px" }}>
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="mb-8 md:mb-0">
+            <h4 className="text-xl font-semibold mb-4">About us</h4>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, ullam?
             </p>
           </div>
-          <div className="col-sm-3">
-            <h4 className="title">Category</h4>
-            <div className="category">
+          <div className="mb-8 md:mb-0">
+            <h4 className="text-xl font-semibold mb-4">Category</h4>
+            <div className="category flex flex-wrap">
               {Array.isArray(categories) &&
                 categories.map((category) => (
-                  <LinkContainer key={category} to={`/${category}`}>
-                    <Button
-                      style={{ color: 'white' }}
-                      key={category}
-                      sx={{ my: 2, color: 'white' }}
-                    // className="categoryB"
-                    >
+                  <Link key={category} to={`/${category}`}>
+                    <button className="text-white my-2 mr-2 md:mr-4 hover:text-gray-400 focus:outline-none">
                       {category.toUpperCase()}
-                    </Button>
-                  </LinkContainer>
+                    </button>
+                  </Link>
                 ))}
             </div>
+
           </div>
-          <div className="col-sm-3">
-            <h4 className="title">Payment</h4>
-            <ul className="payment">
-              <li><span ><FaPaypal /></span></li>
-              <li><span ><FaCcAmex /></span></li>
-              <li><span ><FaCreditCard /></span></li>
-              <li><span ><FaCcVisa /></span></li>
+          <div className="mb-8 md:mb-0">
+            <h4 className="text-xl font-semibold mb-4">Payment</h4>
+            <ul className="payment list-none p-0">
+              <li className="inline-block mr-2"><FaPaypal /></li>
+              <li className="inline-block mr-2"><FaCcAmex /></li>
+              <li className="inline-block mr-2"><FaCreditCard /></li>
+              <li className="inline-block"><FaCcVisa /></li>
             </ul>
           </div>
-          <div className="col-sm-3">
+          <div>
             {userInfo && userInfo.admin && (
-              <LinkContainer to="/admin/userslist" style={{ color: 'white' }}>
-
+              <Link to="/admin/userslist">
                 <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
                   <AdminPanelSettingsIcon /> Admin Panel
                 </button>
-              </LinkContainer>
+              </Link>
             )}
-
           </div>
         </div>
-        <hr />
-        <div className="row text-center">
-          <span style={{ color: '#fff' }}>
-            Copyright © BASHPO
-            {' '}
-            {new Date().getFullYear()}
-          </span>
+        <hr className="my-8 border-t border-gray-600" />
+        <div className="text-center">
+          <p className="text-gray-400">
+            Copyright © BASHPO {new Date().getFullYear()}
+          </p>
         </div>
       </div>
     </footer>

@@ -171,7 +171,7 @@ const HeaderBar = () => {
                                         <div className="z-50 absolute right-0 mt-2 w-48 bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600">
                                             <div className="px-4 py-3">
                                                 <p className="text-sm text-gray-900 dark:text-black">{userInfo.name.toUpperCase()}</p>
-                                                <p className="text-sm font-medium text-black-900 truncate dark:text-gray-300 dark:text-black">
+                                                <p className="text-sm font-medium text-black-900 truncate dark:text-black-300 dark:text-black">
                                                     {userInfo.email}
                                                 </p>
                                             </div>
@@ -184,6 +184,7 @@ const HeaderBar = () => {
                                                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-black-300 dark:hover:bg-gray-600 dark:hover:text-white
                                                                 text-decoration-none"
                                                                 role="menuitem"
+                                                                onClick={handleToggleDropdown}
                                                             >
                                                                 My Favorites
 
@@ -199,6 +200,7 @@ const HeaderBar = () => {
                                                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-black-300 dark:hover:bg-gray-600 dark:hover:text-white
                                                                 text-decoration-none"
                                                                 role="menuitem"
+                                                                onClick={handleToggleDropdown}
                                                             >
                                                                 My Orders
 
@@ -214,6 +216,7 @@ const HeaderBar = () => {
                                                                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-black-300 dark:hover:bg-gray-600 dark:hover:text-white 
                                                                 text-decoration-none"
                                                                 role="menuitem"
+                                                                onClick={handleToggleDropdown}
                                                             >
                                                                 Update Profile
 
@@ -228,6 +231,7 @@ const HeaderBar = () => {
 
                                                                 className="block px-4 py-2 text-sm text-red-700 hover:bg-red-100 dark:text-black-300 dark:hover:bg-red-600 dark:hover:text-white text-decoration-none"
                                                                 role="menuitem"
+                                                                onClick={handleToggleDropdown}
                                                             >
                                                                 <LogoutIcon />Logout
 
