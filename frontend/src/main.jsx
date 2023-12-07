@@ -34,7 +34,7 @@ import FilterOrderScreen from './screens/admin/FilterOrderScreen.jsx'
 import AdminAddProductScreen from './screens/admin/AdminAddProductScreen.jsx'
 import MyFilterOrderScreen from './screens/MyFilterOrderScreen.jsx'
 import SalesScreen from './screens/admin/SalesScreen.jsx'
-// import OtpScreen from './screens/OtpScreen.jsx'
+import AllProductsScreen from './screens/AllProductsScreen'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -47,7 +47,7 @@ const router = createBrowserRouter(
       <Route path='/:category' element={<CategoryScreen />} />
       <Route path='/search/:keyWord' element={<SearchScreen />} />
       <Route path='/filter/:filter' element={<FilterScreen />} />
-      {/* <Route path='/otp' element={<OtpScreen />} /> */}
+      <Route path='/allProducts' element={<AllProductsScreen />} />
       <Route path='' element={<PrivateRoute />}> <Route path='/profile' element={<ProfileScreen />} /> </Route>
       <Route path='' element={<PrivateRoute />}> <Route path='/favorites/:id' element={<FavoritesScreen />} /> </Route>
       <Route path='' element={<PrivateRoute />}> <Route path='/shipping' element={<ShippingScreen />} /> </Route>

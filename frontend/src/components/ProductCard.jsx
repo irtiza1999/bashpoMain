@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-// import CardMedia from '@mui/material/CardMedia';
-// import Typography from '@mui/material/Typography';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
 import { CardActionArea, CardActions, IconButton, Tooltip } from '@mui/material';
 import { useSpring, animated } from 'react-spring';
 import CartButton from './CartButton';
@@ -18,15 +18,6 @@ import { Grid } from '@mui/material';
 import Rating from '@mui/material/Rating';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 import GppMaybeIcon from '@mui/icons-material/GppMaybe';
-
-import {
-  // Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Typography,
-  // Button,
-} from "@material-tailwind/react";
 
 
 const AnimatedCard = animated(Card);
@@ -107,20 +98,16 @@ const ProductCard = ({ product }) => {
           <LinkContainer to={`/product/${product._id}`}>
             <CardActionArea>
               <div>
-                <CardHeader color="blue-gray" className="relative h-56"
-                // component="img"
-                // alt={product.name}
-                // style={{
-                //   width: '100%', height: '15vw',
-                //   objectFit: 'cover'
-                // }}
-                // position="top"
-                >
-                  <img
-                    src={imageBaseUrl + product.image}
-                    alt="card-image"
-                  />
-                </CardHeader>
+                <CardMedia
+                  component="img"
+                  image={imageBaseUrl + product.image}
+                  alt={product.name}
+                  style={{
+                    width: '100%', height: '15vw',
+                    objectFit: 'cover'
+                  }}
+                  position="top"
+                />
               </div>
               <CardContent>
                 <Typography gutterBottom variant="h6" component="div">
@@ -129,7 +116,17 @@ const ProductCard = ({ product }) => {
                 <Typography gutterBottom variant="h8" component="div"
                 // style={{ display: 'flex', alignItems: 'center' }}
                 >
-
+                  {verifiedProduct ? (
+                    <>
+                      <DoneAllIcon sx={{ fontSize: 14, color: 'green', fontWeight: 'bold' }} />
+                      <span style={{ marginLeft: 5, color: 'green' }}>Verified</span>
+                    </>
+                  ) : (
+                    <>
+                      <GppMaybeIcon sx={{ fontSize: 14, color: 'red', fontWeight: 'bold' }} />
+                      <span style={{ marginLeft: 5, color: 'red' }}>Not Verified</span>
+                    </>
+                  )}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {product.countInStock > 0 ? (
