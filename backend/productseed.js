@@ -11,8 +11,8 @@ const productsData = [
         price: 19.99,
         countInStock: 50,
         image: "/blue_raspberry.webp",
-        numReviews: 15,
-        rating: 4.5,
+        numReviews: 0,
+        rating: 0,
         isVerified: true
     },
     {
@@ -26,8 +26,8 @@ const productsData = [
         price: 22.99,
         countInStock: 40,
         image: "/strawberry_fields.jpeg",
-        numReviews: 12,
-        rating: 4.2,
+        numReviews: 0,
+        rating: 0,
         isVerified: true
     },
 
@@ -41,8 +41,8 @@ const productsData = [
         price: 34.99,
         countInStock: 30,
         image: "/starter_pro_kit.jpeg",
-        numReviews: 8,
-        rating: 4.0,
+        numReviews: 0,
+        rating: 0,
         isVerified: true
     },
     {
@@ -54,8 +54,8 @@ const productsData = [
         price: 69.99,
         countInStock: 20,
         image: "/advanced_vaporizer_kit.jpeg",
-        numReviews: 25,
-        rating: 4.8,
+        numReviews: 0,
+        rating: 0,
         isVerified: true
     },
 
@@ -69,8 +69,8 @@ const productsData = [
         price: 29.99,
         countInStock: 25,
         image: "/sub_ohm_beast_tank.webp",
-        numReviews: 18,
-        rating: 4.7,
+        numReviews: 0,
+        rating: 0,
         isVerified: true
     },
     {
@@ -82,8 +82,8 @@ const productsData = [
         price: 39.99,
         countInStock: 15,
         image: "/rda_master.webp",
-        numReviews: 10,
-        rating: 4.3,
+        numReviews: 0,
+        rating: 0,
         isVerified: true
     },
 
@@ -97,8 +97,8 @@ const productsData = [
         price: 12.99,
         countInStock: 50,
         image: "/mesh_replacement_coils.webp",
-        numReviews: 30,
-        rating: 4.9,
+        numReviews: 0,
+        rating: 0,
         isVerified: true
     },
 
@@ -112,8 +112,8 @@ const productsData = [
         price: 14.99,
         countInStock: 30,
         image: "/18650_high_drain_battery.webp",
-        numReviews: 15,
-        rating: 4.5,
+        numReviews: 0,
+        rating: 0,
         isVerified: true
     },
 
@@ -128,8 +128,8 @@ const productsData = [
         price: 19.99,
         countInStock: 25,
         image: "/vape_case_xl.jpg",
-        numReviews: 18,
-        rating: 4.7,
+        numReviews:0,
+        rating: 0,
         isVerified: true
     },
     {
@@ -141,8 +141,8 @@ const productsData = [
         price: 9.99,
         countInStock: 30,
         image: "/drip_tip_variety_pack.jpeg",
-        numReviews: 10,
-        rating: 4.3,
+        numReviews: 0,
+        rating: 0,
         isVerified: true
     },
 
@@ -157,8 +157,8 @@ const productsData = [
         price: 29.99,
         countInStock: 20,
         image: "/cbd_watermelon_bliss.jpeg",
-        numReviews: 15,
-        rating: 4.5,
+        numReviews: 0,
+        rating: 0,
         isVerified: true
     },
   
@@ -172,8 +172,8 @@ const productsData = [
         price: 14.99,
         countInStock: 35,
         image: "/vape_nation_tshirt.jpeg",
-        numReviews: 25,
-        rating: 4.8,
+        numReviews: 0,
+        rating: 0,
         isVerified: true
     },
     {
@@ -185,8 +185,8 @@ const productsData = [
         price: 19.99,
         countInStock: 25,
         image: "/vape_master_snapback_hat.jpeg",
-        numReviews: 18,
-        rating: 4.7,
+        numReviews: 0,
+        rating: 0,
         isVerified: true
     },
 
@@ -200,8 +200,8 @@ const productsData = [
         price: 49.99,
         countInStock: 15,
         image: "/beginner_vape_starter_bundle.jpeg",
-        numReviews: 12,
-        rating: 4.2,
+        numReviews: 0,
+        rating: 0,
         isVerified: true
     },
     {
@@ -213,8 +213,8 @@ const productsData = [
         price: 89.99,
         countInStock: 10,
         image: "/advanced_vapers_essentials_bundle.jpeg",
-        numReviews: 8,
-        rating: 4.0,
+        numReviews: 0,
+        rating: 0,
         isVerified: true
     }
 ];
