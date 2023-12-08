@@ -52,7 +52,7 @@ function ProductCarousel() {
                 </div>
                 <img
                   className="d-block w-100"
-                  src={imageBaseUrl + product.image}
+                  src={product.image}
                   alt="Product"
                   style={{ maxHeight: 'calc(60vh - 120px)', objectFit: 'contain' }}
                 />

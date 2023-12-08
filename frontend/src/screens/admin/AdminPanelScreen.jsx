@@ -28,6 +28,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import logo from '../../../../uploads/logo.webp';
 
 const navigationItems = [
   { to: '/', icon: <HomeIcon />, text: 'Home' },
@@ -79,7 +80,7 @@ const Header = () => {
                 }}
               >
                 <img
-                  src="https://dl.dropboxusercontent.com/s/5ajwo527jc1bmv1/logo.png?dl=0"
+                  src={logo}
                   alt="logo"
                   width="50px"
                   height="50px"

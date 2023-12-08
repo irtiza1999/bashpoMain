@@ -69,7 +69,7 @@ const CartScreen = () => {
                 <ListGroup.Item key={item._id} className="mb-4 md:mb-0">
                   <Row>
                     <Col md={2} className="mb-2 md:mb-0">
-                      <Image src={imageBaseUrl + item.image} alt={item.name} fluid rounded
+                      <Image src={item.image} alt={item.name} fluid rounded
                         className="w-full md:w-auto h-auto max-h-24 max-h-24"
                       />
                     </Col>

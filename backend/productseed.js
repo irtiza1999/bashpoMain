@@ -162,7 +162,7 @@ const productsData = [
         isVerified: true
     },
   
-    // Apparel and Merchandise
+    // Apparel and Merchance
     {
         name: "VapeNation T-Shirt",
         brand: " ",

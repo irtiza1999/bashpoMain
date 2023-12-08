@@ -164,7 +164,7 @@ const AdminAllProductScreen = () => {
                       </>
                     }
                     </TableCell>
-                    <TableCell><img src={imageBaseUrl + data.image} style={{ height: '40px', width: '30px' }} /></TableCell>
+                    <TableCell><img src={data.image} style={{ height: '40px', width: '30px' }} /></TableCell>
                     <TableCell>{data.category}</TableCell>
                     <TableCell>${data.price}</TableCell>
                     {data.countInStock > 0 ? (<TableCell>{data.countInStock}</TableCell>)

@@ -117,7 +117,7 @@ const ProductCard = ({ product }) => {
               // position="top"
               >
                 <img
-                  src={imageBaseUrl + product.image}
+                  src={product.image}
                   alt="card-image"
                 />
               </CardHeader>

@@ -167,7 +167,7 @@ const ProductScreen = () => {
             <Grid container>
               <Grid item xs={12} sm={6}>
                 <img
-                  src={imageBaseUrl + data.image}
+                  src={data.image}
                   alt="Product"
                   style={{ width: '100%', height: 'auto', maxWidth: '300px', maxHeight: '300px', objectFit: 'cover' }}
                 />
