@@ -1,0 +1,350 @@
+[{
+  "_id": {
+    "$oid": "6574a0bb2048cfb5026de681"
+  },
+  "name": "CBD E-Liquid - Watermelon Bliss",
+  "brand": "CBDVape",
+  "flavor": "Watermelon",
+  "description": "Experience the calming effects of CBD with the refreshing taste of watermelon.",
+  "category": "CBD Products",
+  "deviceType": "CBD E-Liquids",
+  "price": 29.99,
+  "countInStock": 19,
+  "image": "https://dl.dropboxusercontent.com/scl/fi/zz4pxiy6hc3qsg7zsk5hy/cbd_watermelon_bliss.jpeg?rlkey=qjzqx2dyjnrs62xg7lb2roym2&dl=0",
+  "numReviews": 0,
+  "rating": 0,
+  "isVerified": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-12-09T17:15:39.955Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-24T12:34:07.051Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6574a0bb2048cfb5026de67b"
+  },
+  "name": "Sub-Ohm Beast Tank",
+  "brand": "VaporBeast",
+  "description": "Unleash the beast with this sub-ohm tank, delivering intense flavor and vapor production.",
+  "category": "Tanks and Atomizers",
+  "deviceType": "Sub-Ohm Tank",
+  "price": 29.99,
+  "countInStock": 25,
+  "image": "https://dl.dropboxusercontent.com//scl/fi/fesmhk0lhvqh1aw76nlyq/sub_ohm_beast_tank.jpg?rlkey=ug3sx6g5nfzplhpqglvteha46&dl=0",
+  "numReviews": 0,
+  "rating": 0,
+  "isVerified": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-12-09T17:15:39.954Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-09T17:15:39.954Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6574a0bb2048cfb5026de678"
+  },
+  "name": "Strawberry Fields",
+  "brand": "VapeNation",
+  "flavor": "Strawberry",
+  "nicotineStrength": "6mg",
+  "description": "Indulge in the luscious taste of ripe strawberries, perfect for all-day vaping.",
+  "category": "E-Liquids",
+  "deviceType": "Sub-Ohm",
+  "price": 22.99,
+  "countInStock": 40,
+  "image": "https://dl.dropboxusercontent.com/scl/fi/0e6x1qc37wiozeskluo2r/strawberry_fields.jpeg?rlkey=7xpsmrpc51iuscgtcu4xzgh8d&dl=0",
+  "numReviews": 0,
+  "rating": 0,
+  "isVerified": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-12-09T17:15:39.954Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-09T17:15:39.954Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6574a0bb2048cfb5026de67d"
+  },
+  "name": "Mesh Replacement Coils",
+  "brand": "VapeCoil",
+  "description": "Experience smooth and consistent vapor production with these mesh replacement coils.",
+  "category": "Coils and Replacement Parts",
+  "deviceType": "Replacement Coils",
+  "price": 12.99,
+  "countInStock": 50,
+  "image": "https://dl.dropboxusercontent.com/scl/fi/b1uo7y5muzio360y7r7kr/mesh_replacement_coils.jpg?rlkey=zmm7m0yg2kkh78ux482ngm8p2&dl=0",
+  "numReviews": 0,
+  "rating": 0,
+  "isVerified": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-12-09T17:15:39.954Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-09T17:15:39.954Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6574a0bb2048cfb5026de67e"
+  },
+  "name": "18650 High-Drain Battery",
+  "brand": "PowerCell",
+  "description": "Power up your device with this high-drain 18650 battery for extended vaping sessions.",
+  "category": "Batteries and Chargers",
+  "deviceType": "18650 Batteries",
+  "price": 14.99,
+  "countInStock": 30,
+  "image": "https://dl.dropboxusercontent.com/scl/fi/xhq7kfml43ldommw5wz0n/18650_high_drain_battery.jpg?rlkey=fb0ph6rngiy6sd5e6kjy499jk&dl=0",
+  "numReviews": 0,
+  "rating": 0,
+  "isVerified": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-12-09T17:15:39.954Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-09T17:15:39.954Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6574a0bb2048cfb5026de680"
+  },
+  "name": "Drip Tip Variety Pack",
+  "brand": "TipCraft",
+  "description": "Customize your vaping experience with this variety pack of stylish drip tips.",
+  "category": "Accessories",
+  "deviceType": "Drip Tips",
+  "price": 9.99,
+  "countInStock": 29,
+  "image": "https://dl.dropboxusercontent.com/scl/fi/d4w2fbtrs72hh9zb2fwqx/drip_tip_variety_pack.jpeg?rlkey=8j7l17jsbxfemnl2fzf4sc1n0&dl=0",
+  "numReviews": 0,
+  "rating": 0,
+  "isVerified": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-12-09T17:15:39.955Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-24T12:34:07.048Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6574a0bb2048cfb5026de677"
+  },
+  "name": "Blue Raspberry Burst",
+  "brand": "VapeMaster",
+  "flavor": "Blue Raspberry",
+  "nicotineStrength": "3mg",
+  "description": "Experience the burst of sweet and tangy blue raspberry flavor in every puff.",
+  "category": "E-Liquids",
+  "deviceType": "Sub-Ohm",
+  "price": 19.99,
+  "countInStock": 50,
+  "image": "https://dl.dropboxusercontent.com/scl/fi/f6i9vkrlfdkolt1tca5us/blue_raspberry.jpg?rlkey=57f3c23ry2ylqcsh5zc7bjfrv&dl=0",
+  "numReviews": 0,
+  "rating": 0,
+  "isVerified": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-12-09T17:15:39.953Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-09T17:15:39.953Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6574a0bb2048cfb5026de67f"
+  },
+  "name": "VapeCase XL",
+  "brand": "GearGuard",
+  "description": "Protect your vape setup with this extra-large and durable vape case.",
+  "category": "Accessories",
+  "deviceType": "Vape Cases",
+  "price": 19.99,
+  "countInStock": 25,
+  "image": "https://dl.dropboxusercontent.com/scl/fi/ayv5i0jlygrkjsuccyl92/vape_case_xl.jpg?rlkey=0n5zuzc4cm63iwd5anju0h83j&dl=0",
+  "numReviews": 0,
+  "rating": 0,
+  "isVerified": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-12-09T17:15:39.954Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-09T17:15:39.954Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6574a0bb2048cfb5026de682"
+  },
+  "name": "VapeNation T-Shirt",
+  "brand": " ",
+  "description": "Show your love for vaping with this stylish VapeNation logo T-shirt.",
+  "category": "Apparel and Merchandise",
+  "deviceType": "T-Shirts",
+  "price": 14.99,
+  "countInStock": 14,
+  "image": "https://dl.dropboxusercontent.com/scl/fi/f4ne1auo1qdlsv80wxkl8/vape_nation_tshirt.jpeg?rlkey=4t6q81q6i0fyb6zptlr0hl98s&dl=0",
+  "numReviews": 1,
+  "rating": 4.5,
+  "isVerified": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-12-09T17:15:39.955Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-24T12:35:29.124Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6574a0bb2048cfb5026de679"
+  },
+  "name": "Starter Pro Kit",
+  "brand": "VapeTech",
+  "description": "The perfect kit for beginners, providing a smooth vaping experience.",
+  "category": "Vape Kits",
+  "deviceType": "Starter Kit",
+  "price": 34.99,
+  "countInStock": 30,
+  "image": "https://dl.dropboxusercontent.com/scl/fi/2bel6npkigsk452d05zl5/starter_pro_kit.jpeg?rlkey=q0qj0z1r6f2w5f1k8i81h4yzb&dl=0",
+  "numReviews": 0,
+  "rating": 0,
+  "isVerified": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-12-09T17:15:39.954Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-09T17:15:39.954Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6574a0bb2048cfb5026de67c"
+  },
+  "name": "RDA Master",
+  "brand": "CoilCraft",
+  "description": "Perfect your coil-building skills with this high-quality rebuildable dripping atomizer.",
+  "category": "Tanks and Atomizers",
+  "deviceType": "RDA",
+  "price": 39.99,
+  "countInStock": 15,
+  "image": "https://dl.dropboxusercontent.com/scl/fi/803ir41fk9dc5b59z9aqj/rda_master.jpg?rlkey=rba1atqbyvblvyf6usc1y37od&dl=0",
+  "numReviews": 0,
+  "rating": 0,
+  "isVerified": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-12-09T17:15:39.954Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-09T17:15:39.954Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6574a0bb2048cfb5026de684"
+  },
+  "name": "Beginner Vape Starter Bundle",
+  "brand": "VapeStarter",
+  "description": "Get everything you need to start vaping with this comprehensive beginner bundle.",
+  "category": "Starter Bundles",
+  "deviceType": "Beginner Kits",
+  "price": 49.99,
+  "countInStock": 15,
+  "image": "https://dl.dropboxusercontent.com/scl/fi/oaekfqmiy6ojley2tj46q/beginner_vape_starter_bundle.jpeg?rlkey=oyuylecfw0lnjgfp0hy6xy9b4&dl=0",
+  "numReviews": 0,
+  "rating": 0,
+  "isVerified": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-12-09T17:15:39.955Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-09T17:15:39.955Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6574a0bb2048cfb5026de683"
+  },
+  "name": "VapeMaster Snapback Hat",
+  "brand": "VapeMaster",
+  "description": "Complete your look with this high-quality VapeMaster embroidered snapback hat.",
+  "category": "Apparel and Merchandise",
+  "deviceType": "Hats",
+  "price": 19.99,
+  "countInStock": 25,
+  "image": "https://dl.dropboxusercontent.com/scl/fi/qomldamjn9n2qp162uc75/vape_master_snapback_hat.jpeg?rlkey=magc3inbqudufr45eqfl7zjxn&dl=0",
+  "numReviews": 0,
+  "rating": 0,
+  "isVerified": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-12-09T17:15:39.955Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-09T17:15:39.955Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6574a0bb2048cfb5026de67a"
+  },
+  "name": "Advanced Vaporizer Kit",
+  "brand": "CloudChaser",
+  "description": "For the advanced user, unleash massive clouds with this powerful vaporizer kit.",
+  "category": "Vape Kits",
+  "deviceType": "Advanced Kit",
+  "price": 69.99,
+  "countInStock": 20,
+  "image": "https://dl.dropboxusercontent.com/scl/fi/9nh9o69lxdii1hwxe8t61/advanced_vaporizer_kit.jpeg?rlkey=c5thenzfaqdxadp8tinron59z&dl=0",
+  "numReviews": 0,
+  "rating": 0,
+  "isVerified": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-12-09T17:15:39.954Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-09T17:15:39.954Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6574a0bb2048cfb5026de685"
+  },
+  "name": "Advanced Vaper's Essentials Bundle",
+  "brand": "VapePro",
+  "description": "Upgrade your vaping experience with this essentials bundle for advanced users.",
+  "category": "Starter Bundles",
+  "deviceType": "Advanced Kits",
+  "price": 89.99,
+  "countInStock": 10,
+  "image": "https://dl.dropboxusercontent.com/scl/fi/20b7ggpkrhdsx9tfbmjxs/advanced_vapers_essentials_bundle.jpeg?rlkey=beiyogxkuy713c45ou5kdqhao&dl=0",
+  "numReviews": 0,
+  "rating": 0,
+  "isVerified": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-12-09T17:15:39.955Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-09T17:15:39.955Z"
+  }
+}]

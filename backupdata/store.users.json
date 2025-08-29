@@ -1,0 +1,112 @@
+[{
+  "_id": {
+    "$oid": "656f6ca78402160a698bceca"
+  },
+  "name": "admin",
+  "email": "admin@admin.com",
+  "password": "$2a$10$bR7Vmiw8V2DwBIFL0JqrSOyu5Veta/ICsiLOfDnyLj0HpLfkTraAa",
+  "isAdmin": true,
+  "isArtist": false,
+  "favoriteProducts": [
+    {
+      "$oid": "657190f37450bb006c3482b5"
+    },
+    {
+      "$oid": "657190f37450bb006c3482b6"
+    },
+    {
+      "$oid": "657190f37450bb006c3482b7"
+    },
+    {
+      "$oid": "657190f37450bb006c3482ad"
+    },
+    {
+      "$oid": "657190f37450bb006c3482b0"
+    },
+    {
+      "$oid": "657190f37450bb006c3482b4"
+    },
+    {
+      "$oid": "657190f37450bb006c3482b3"
+    },
+    {
+      "$oid": "6571fab7f946a5bacd58fae7"
+    },
+    {
+      "$oid": "6571fab7f946a5bacd58faeb"
+    },
+    {
+      "$oid": "6571fab7f946a5bacd58fae1"
+    },
+    {
+      "$oid": "65720bafc826c0d94f8a4d67"
+    }
+  ],
+  "points": 0,
+  "membership": {
+    "discount": 0
+  },
+  "createdAt": {
+    "$date": "2023-12-05T18:32:07.233Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-07T18:54:48.444Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6573587d0f543678399c1991"
+  },
+  "name": "Md Irtiza Hossain ",
+  "email": "mdirtiza.hossain1999@gmail.com",
+  "phone": "01795480034",
+  "password": "$2a$10$OVbdsf6x7k40x7yGeaMX4eBVJ6HMnGlMUuPc4iaRVkYU6OupTP4bi",
+  "isAdmin": false,
+  "favoriteProducts": [
+    {
+      "$oid": "6574a0bb2048cfb5026de684"
+    },
+    {
+      "$oid": "6574a0bb2048cfb5026de67e"
+    }
+  ],
+  "points": 0,
+  "membership": {
+    "discount": 0
+  },
+  "createdAt": {
+    "$date": "2023-12-08T17:55:09.240Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-24T12:37:56.305Z"
+  },
+  "__v": 0,
+  "shippingAddress": {
+    "address": "Bsabo",
+    "city": "Dhaka",
+    "postalCode": "1219"
+  }
+},
+{
+  "_id": {
+    "$oid": "687f9eb52b455c8d071b9e9e"
+  },
+  "name": "Fathin Israq",
+  "email": "israq066@gmail.com",
+  "password": "$2a$10$bhfJOJ5fPQHJgTERP6RbA.ge9qF8yN5l4enj4c2sUXRd828Zze4WC",
+  "isAdmin": false,
+  "isArtist": false,
+  "favoriteProducts": [],
+  "points": 0,
+  "membership": {
+    "discount": 0
+  },
+  "createdAt": {
+    "$date": "2025-07-22T14:22:45.712Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-22T14:22:45.712Z"
+  },
+  "__v": 0
+}]

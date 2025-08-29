@@ -1,0 +1,216 @@
+[{
+  "_id": {
+    "$oid": "6571ed095a4a1e87d2724802"
+  },
+  "user": {
+    "$oid": "656f6ca78402160a698bceca"
+  },
+  "orderItems": [
+    {
+      "name": "Drip Tip Variety Pack",
+      "qty": 1,
+      "image": "/drip_tip_variety_pack.jpeg",
+      "price": 9.99,
+      "product": {
+        "$oid": "657190f37450bb006c3482b2"
+      },
+      "_id": {
+        "$oid": "6571ed095a4a1e87d2724803"
+      }
+    },
+    {
+      "name": "VapeNation T-Shirt",
+      "qty": 1,
+      "image": "/vape_nation_tshirt.jpeg",
+      "price": 14.99,
+      "product": {
+        "$oid": "657190f37450bb006c3482b4"
+      },
+      "_id": {
+        "$oid": "6571ed095a4a1e87d2724804"
+      }
+    },
+    {
+      "name": "VapeMaster Snapback Hat",
+      "qty": 1,
+      "image": "/vape_master_snapback_hat.jpeg",
+      "price": 19.99,
+      "product": {
+        "$oid": "657190f37450bb006c3482b5"
+      },
+      "_id": {
+        "$oid": "6571ed095a4a1e87d2724805"
+      }
+    }
+  ],
+  "shippingAddress": {
+    "address": "181",
+    "city": "dad",
+    "postalCode": "ds",
+    "country": "sd"
+  },
+  "paymentMethod": "PayPal",
+  "taxPrice": 6.75,
+  "shippingPrice": 10,
+  "totalPrice": 61.72,
+  "isPaid": false,
+  "isDelivered": false,
+  "isCancelled": false,
+  "createdAt": {
+    "$date": "2023-12-07T16:04:25.652Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-07T16:04:25.652Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65735b280f543678399c19b5"
+  },
+  "user": {
+    "$oid": "6573587d0f543678399c1991"
+  },
+  "orderItems": [
+    {
+      "name": "VapeCase XL",
+      "qty": 1,
+      "image": "https://www.dropbox.com/scl/fi/ayv5i0jlygrkjsuccyl92/vape_case_xl.jpg?rlkey=0n5zuzc4cm63iwd5anju0h83j&raw=1",
+      "price": 19.99,
+      "product": {
+        "$oid": "65720bafc826c0d94f8a4d66"
+      },
+      "_id": {
+        "$oid": "65735b280f543678399c19b6"
+      }
+    }
+  ],
+  "shippingAddress": {
+    "address": "bsabo",
+    "city": "Dhaka",
+    "postalCode": "1214",
+    "country": "Bd"
+  },
+  "paymentMethod": "PayPal",
+  "taxPrice": 3,
+  "shippingPrice": 10,
+  "totalPrice": 32.99,
+  "isPaid": false,
+  "isDelivered": false,
+  "isCancelled": true,
+  "createdAt": {
+    "$date": "2023-12-08T18:06:32.318Z"
+  },
+  "updatedAt": {
+    "$date": "2023-12-08T18:09:21.444Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685a9b3e5a03ccf1ee0de054"
+  },
+  "user": {
+    "$oid": "656f6ca78402160a698bceca"
+  },
+  "orderItems": [
+    {
+      "name": "Drip Tip Variety Pack",
+      "qty": 1,
+      "image": "https://dl.dropboxusercontent.com/scl/fi/d4w2fbtrs72hh9zb2fwqx/drip_tip_variety_pack.jpeg?rlkey=8j7l17jsbxfemnl2fzf4sc1n0&dl=0",
+      "price": 9.99,
+      "product": {
+        "$oid": "6574a0bb2048cfb5026de680"
+      },
+      "_id": {
+        "$oid": "685a9b3e5a03ccf1ee0de055"
+      }
+    },
+    {
+      "name": "CBD E-Liquid - Watermelon Bliss",
+      "qty": 1,
+      "image": "https://dl.dropboxusercontent.com/scl/fi/zz4pxiy6hc3qsg7zsk5hy/cbd_watermelon_bliss.jpeg?rlkey=qjzqx2dyjnrs62xg7lb2roym2&dl=0",
+      "price": 29.99,
+      "product": {
+        "$oid": "6574a0bb2048cfb5026de681"
+      },
+      "_id": {
+        "$oid": "685a9b3f5a03ccf1ee0de056"
+      }
+    },
+    {
+      "name": "VapeNation T-Shirt",
+      "qty": 5,
+      "image": "https://dl.dropboxusercontent.com/scl/fi/f4ne1auo1qdlsv80wxkl8/vape_nation_tshirt.jpeg?rlkey=4t6q81q6i0fyb6zptlr0hl98s&dl=0",
+      "price": 14.99,
+      "product": {
+        "$oid": "6574a0bb2048cfb5026de682"
+      },
+      "_id": {
+        "$oid": "685a9b3f5a03ccf1ee0de057"
+      }
+    }
+  ],
+  "shippingAddress": {
+    "address": "181, Basabo",
+    "city": "Dhaka",
+    "postalCode": "1214",
+    "country": "Bangladesh"
+  },
+  "paymentMethod": "PayPal",
+  "taxPrice": 17.24,
+  "shippingPrice": 0,
+  "totalPrice": 132.17,
+  "isPaid": false,
+  "isDelivered": false,
+  "isCancelled": false,
+  "createdAt": {
+    "$date": "2025-06-24T12:34:07.004Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-24T12:34:07.004Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "685a9b915a03ccf1ee0de181"
+  },
+  "user": {
+    "$oid": "6573587d0f543678399c1991"
+  },
+  "orderItems": [
+    {
+      "name": "VapeNation T-Shirt",
+      "qty": 16,
+      "image": "https://dl.dropboxusercontent.com/scl/fi/f4ne1auo1qdlsv80wxkl8/vape_nation_tshirt.jpeg?rlkey=4t6q81q6i0fyb6zptlr0hl98s&dl=0",
+      "price": 14.99,
+      "product": {
+        "$oid": "6574a0bb2048cfb5026de682"
+      },
+      "_id": {
+        "$oid": "685a9b915a03ccf1ee0de182"
+      }
+    }
+  ],
+  "shippingAddress": {
+    "address": "181, Basabo",
+    "city": "Dhaka",
+    "postalCode": "1214",
+    "country": "Bangladesh"
+  },
+  "paymentMethod": "PayPal",
+  "taxPrice": 35.98,
+  "shippingPrice": 0,
+  "totalPrice": 275.82,
+  "isPaid": false,
+  "isDelivered": false,
+  "isCancelled": false,
+  "createdAt": {
+    "$date": "2025-06-24T12:35:29.084Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-24T12:35:29.084Z"
+  },
+  "__v": 0
+}]

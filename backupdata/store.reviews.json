@@ -1,0 +1,20 @@
+[{
+  "_id": {
+    "$oid": "685a9b325a03ccf1ee0de048"
+  },
+  "rating": 4.5,
+  "comment": "asdasd",
+  "user": {
+    "$oid": "656f6ca78402160a698bceca"
+  },
+  "product": {
+    "$oid": "6574a0bb2048cfb5026de682"
+  },
+  "createdAt": {
+    "$date": "2025-06-24T12:33:54.342Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-24T12:33:54.342Z"
+  },
+  "__v": 0
+}]
